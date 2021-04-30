@@ -1,0 +1,28 @@
+
+
+
+## (XXX can be msm8996, msmXXX, sdm845 etc)
+
+YOUR_HW_PLATFORM := msm8937
+
+# Hardware
+PRODUCT_BOARD_PLATFORM := $(YOUR_HW_PLATFORM)
+PRODUCT_USES_QCOM_HARDWARE := true
+
+# HALS
+SRC_AUDIO_HAL_DIR := hardware/qcom-caf/$(YOUR_HW_PLATFORM)/audio
+SRC_DISPLAY_HAL_DIR := hardware/qcom-caf/$(YOUR_HW_PLATFORM)/display
+SRC_MEDIA_HAL_DIR := hardware/qcom-caf/$(YOUR_HW_PLATFORM)/media
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+$(LOCAL_PATH) \
+hardware/qcom-caf/$(YOUR_HW_PLATFORM) \
+hardware/qcom \
+vendor/qcom/opensource \
+vendor/xiaomi/msm8937-common \
+vendor/xiaomi/olivewood \
+vendor/codeaurora/telephony \
+vendor/addon/misc \
+vendor/addon/themes \
+vendor/xiaomi/sdm439-common
