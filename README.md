@@ -3,7 +3,11 @@ Menu based system for building a11 ROMs..  WIP
 
 Simply clone this repo and run the following script to start.  There are currently only two devices, but now devices will be added in the future.
 
+If you have not already done so, install git.
 
+```
+sudo apt-get update ; sudo apt-get install -y git
+```
 
 ```
 mkdir ~/menu_rom_builder/ ; cd ~/menu_rom_builder/
