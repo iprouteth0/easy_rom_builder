@@ -524,7 +524,7 @@ rom45() {
 rom46() {
   ## nezuko
         export ROMGIT=https://github.com/NezukoOS/manifest
-        export ROMNAME=aosp
+        export ROMNAME=nezuko
 	export ROMDIR=nezuko
         export ROMBUILD=bacon
 	export VENDOR_CONFIG=$ROMNAME ; . DeviceMenu.sh
