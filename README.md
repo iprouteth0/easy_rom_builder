@@ -10,8 +10,9 @@ sudo apt-get update ; sudo apt-get install -y git
 ```
 
 ```
-mkdir ~/menu_rom_builder/ ; cd ~/menu_rom_builder/
+mkdir ~/android/ ; cd ~/android/
 git clone https://github.com/iprouteth0/menu_based_rom_build_system.git
+cd menu_based_rom_build_system/
 . RomMenu.sh
 ```
 
