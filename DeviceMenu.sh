@@ -30,12 +30,16 @@ reset=`tput sgr0`
 #functions
 ginna() {
   # ginna Build menu
-  . Build_ginna.sh  
+  export DEVICEDIR="device/motorola/ginna"
+  export DEVICENAME=ginna
+  . Build_script.sh  
 }
 
 olivewood() {
   # olivewood Build menu
-  . Build_olivewood.sh 
+  export DEVICEDIR="device/xiaomi/olivewood"
+  export DEVICENAME=olivewood
+  . Build_script.sh 
 }
 
 recovery() {
