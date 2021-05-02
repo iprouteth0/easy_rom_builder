@@ -538,7 +538,7 @@ rom47() {
         export ROMNAME=nad
 	export ROMDIR=nusantara
         export ROMBUILD=nad
-	export VENDOR_CONFIG=nusantara
+	export VENDOR_CONFIG=nusantara ; . DeviceMenu.sh
   read
 }
 
