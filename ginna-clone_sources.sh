@@ -13,7 +13,7 @@ fi
 
 
 
-sed -i "s|vendor/lineage/config|vendor/$ROMNAME/config|" device/motorola/ginna/lineage_ginna.mk
+sed -i "s|vendor/lineage/config|vendor/$VENDOR_CONFIG/config|" device/motorola/ginna/lineage_ginna.mk
 #sed -i "s|common_full_phone.mk|common.mk|" device/motorola/ginna/lineage_ginna.mk
 sed -i 's/BUILD_GMS/#BUILD_GMS/' device/motorola/ginna/lineage_ginna.mk
 sed -i 's|$(call inherit-product, vendor/partner_gms/products/gms_go_2gb.mk)|#$(call inherit-product, vendor/partner_gms/products/gms_go_2gb.mk)|' device/motorola/ginna/lineage_ginna.mk
