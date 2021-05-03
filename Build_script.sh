@@ -31,6 +31,7 @@ export WITHOUT_CHECK_API=true
 #time brunch $DEVICENAME
 lunch $ROMNAME\_$DEVICENAME-userdebug
 make $ROMBUILD -j$(nproc --ignore=8)
+cd ..
 read
 
 
@@ -52,5 +53,6 @@ export WITH_CHECK_API=true
 #time brunch $DEVICENAME
 lunch $ROMNAME\_$DEVICENAME-userdebug
 make $ROMBUILD -j$(nproc --ignore=8)
+cd ..
 read
 fi
