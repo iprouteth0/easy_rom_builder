@@ -11,8 +11,8 @@ sudo apt-get update ; sudo apt-get install -y git
 
 ```
 mkdir ~/android/ ; cd ~/android/
-git clone https://github.com/iprouteth0/menu_based_rom_build_system.git
-cd menu_based_rom_build_system/
+git clone https://github.com/iprouteth0/easy_rom_builder.git
+cd easy_rom_builder/
 . RomMenu.sh
 ```
 
