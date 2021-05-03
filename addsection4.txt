@@ -1,5 +1,5 @@
 
-1 )
+MENUNUMBER )
   # CODENAME build menu
   clear
   BEGIN=$(date +%s)
