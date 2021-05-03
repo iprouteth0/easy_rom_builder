@@ -47,6 +47,8 @@ adddevice() {
   . AddDevice.sh
 }
 
+## section1
+
 # ----------------------------------------------------------
 menu=
 until [ "$menu" = "0" ]; do
@@ -57,12 +59,16 @@ echo "${red}=========================================================${reset}"
 echo "${red}==${reset}${yellow}   1 - Motorola E 2020 (ginna)                       ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}   2 - Xiaomi 8A Dual (olivewood)                    ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}   3 - Add Device to Menu                            ${reset}${red}==${reset}"
+## section2
 echo "${red}==${reset}${yellow}   0 - Return To Main Menu                           ${reset}${red}==${reset}"
 echo "${red}=========================================================${reset}"
 echo ""
 echo -n "Enter selection: "
 read menu
 echo ""
+
+## section3
+
 case ${menu} in
 1 )
   # ginna build menu
@@ -93,7 +99,8 @@ case ${menu} in
   clear
 ;;
 #############################################################
-
+## section4
+#############################################################
 0 ) 
   # Return To Main Menu
 #  cd ${SOURCE2}
