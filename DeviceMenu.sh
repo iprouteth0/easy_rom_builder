@@ -42,10 +42,9 @@ olivewood() {
   . Build_script.sh 
 }
 
-recovery() {
-  # Recovery Build Menu
-  cd ${SOURCE}
-  . BuildMenu-Recoveries.sh  
+adddevice() {
+  # Add device to menu using scripts
+  . AddDevice.sh
 }
 
 # ----------------------------------------------------------
@@ -53,11 +52,11 @@ menu=
 until [ "$menu" = "0" ]; do
 echo ""
 echo "${red}=========================================================${reset}"
-echo "${red}==${reset}${green}                Moto E 2020 Build Menu               ${reset}${red}==${reset}"
+echo "${red}==${reset}${green}                Moto E 2020 Build Menu                ${reset}${red}==${reset}"
 echo "${red}=========================================================${reset}"
 echo "${red}==${reset}${yellow}   1 - Motorola E 2020 (ginna)                       ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}   2 - Xiaomi 8A Dual (olivewood)                    ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   3 - Recovery Menu                                 ${reset}${red}==${reset}"
+echo "${red}==${reset}${yellow}   3 - Add Device to Menu                            ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}   0 - Return To Main Menu                           ${reset}${red}==${reset}"
 echo "${red}=========================================================${reset}"
 echo ""
@@ -86,10 +85,10 @@ case ${menu} in
 #############################################################
 
 3 )
-  # Recovery Build Menu
+  # Add device to build menu
   clear
   BEGIN=$(date +%s)
-  recovery
+  adddevice
   END=$(date +%s)
   clear
 ;;
