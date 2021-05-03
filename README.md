@@ -16,7 +16,7 @@ cd easy_rom_builder/
 . RomMenu.sh
 ```
 
-A menu option for adding additional devices has been added to the device menu.  There may be some odditiy in behavior until I've refined this additional option.  In the mean time, feel free to use the option.  Just remember you will be to add your own sources script with this making nomenclature: codename-clone_sources.sh.  All device/vendor/kernel trees should be cooked from within that sub-script.  Also any changes needed to adapt device trees to ROM source should be fine here as well.  Please see my ginna and olivewood examples for this.
+A menu option for adding additional devices is now available in the device menu.  There may be some odditiy in behavior until I've refined this additional option.  In the mean time, feel free to use the option.  Just remember you will be to add your own sources script with this making nomenclature: codename-clone_sources.sh.  All device/vendor/kernel trees should be cooked from within that sub-script.  Also any changes needed to adapt device trees to ROM source should be fine here as well.  Please see my ginna and olivewood examples for this.
 
 Devices current included in the script
 - [x] Motorola E 2020
