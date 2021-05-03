@@ -15,7 +15,7 @@ sed -i "s|CODENAME|$CODENAME|" tmp/addsection1.txt
 sed -i "s|CODENAME|$CODENAME|" tmp/addsection2.txt
 sed -i "s|CODENAME|$CODENAME|" tmp/addsection4.txt
 sed -i "s|MENUNUMBER|$MENUNUMBER|" tmp/addsection2.txt
-sed -i "s|MENUNUMBER|$MENUNUMBER|" tmp/addsevtion4.txt
+sed -i "s|MENUNUMBER|$MENUNUMBER|" tmp/addsection4.txt
 sed -i "s|TREEDIR|$TREEDIR|" tmp/addsection1.txt
 
 sed -i '/section1/r tmp/addsection1.txt' DeviceMenu.sh
