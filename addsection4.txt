@@ -1,0 +1,10 @@
+
+1 )
+  # CODENAME build menu
+  clear
+  BEGIN=$(date +%s)
+  CODENAME
+  END=$(date +%s)
+  clear
+;;
+#############################################################
