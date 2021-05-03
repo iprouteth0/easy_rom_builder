@@ -1,4 +1,4 @@
-# menu_based_rom_build_system
+# easy_rom_builder by iprouteth0
 Menu based system for building a11 ROMs..  WIP
 
 Simply clone this repo and run the following script to start.  There are currently only two devices, but new devices will be added in the future.
