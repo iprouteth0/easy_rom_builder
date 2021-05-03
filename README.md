@@ -20,3 +20,5 @@ Devices current included in the script
 - [x] Motorola E 2020
 - [x] Xiaomi 8a Dual
 - [ ] Samsung Galaxy S10+ series (WIP)
+
+Huge thanks go to my mentor @PizzaG who I worked on the origin scripts to this project with.
