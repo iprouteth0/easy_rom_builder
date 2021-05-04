@@ -36,9 +36,44 @@ ginna() {
 }
 
 olivewood() {
-  # olivewood Build menu
+  # Olivewood Build menu
   export DEVICEDIR="device/xiaomi/olivewood"
   export DEVICENAME=olivewood
+  . Build_script.sh 
+}
+
+beyond0qlte() {
+  # samsung beyond0qlte Build menu
+  export DEVICEDIR="device/samsung/beyond0qlte"
+  export DEVICENAME=beyond0qlte
+  . Build_script.sh 
+}
+
+beyond1qlte() {
+  # samsung beyond1qlte Build menu
+  export DEVICEDIR="device/samsung/beyond1qlte"
+  export DEVICENAME=beyond1qlte
+  . Build_script.sh 
+}
+
+beyond2qlte() {
+  # samsung beyond2qlte Build menu
+  export DEVICEDIR="device/samsung/beyond2qlte"
+  export DEVICENAME=beyond2qlte
+  . Build_script.sh 
+}
+
+d1q() {
+  # samsung d1q Build menu
+  export DEVICEDIR="device/samsung/d1q"
+  export DEVICENAME=olivewood
+  . Build_script.sh 
+}
+
+d2q() {
+  # samsung d2q Build menu
+  export DEVICEDIR="device/samsung/d2q"
+  export DEVICENAME=d2q
   . Build_script.sh 
 }
 
@@ -58,8 +93,13 @@ echo "${red}==${reset}${green}                Moto E 2020 Build Menu            
 echo "${red}=========================================================${reset}"
 echo "${red}==${reset}${yellow}   1 - Motorola E 2020 (ginna)                       ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}   2 - Xiaomi 8A Dual (olivewood)                    ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   3 - Add Device to Menu                            ${reset}${red}==${reset}"
+echo "${red}==${reset}${yellow}   3 - Samsung beyond0qlte                           ${reset}${red}==${reset}"
+echo "${red}==${reset}${yellow}   4 - Samsung beyond1qlte                           ${reset}${red}==${reset}"
+echo "${red}==${reset}${yellow}   5 - Samsung beyond2qlte                           ${reset}${red}==${reset}"
+echo "${red}==${reset}${yellow}   6 - Samsung d1q                                   ${reset}${red}==${reset}"
+echo "${red}==${reset}${yellow}   7 - Samsung d2q                                   ${reset}${red}==${reset}"
 ## section2
+echo "${red}==${reset}${yellow}   8 - Add Device to Menu                            ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}   0 - Return To Main Menu                           ${reset}${red}==${reset}"
 echo "${red}=========================================================${reset}"
 echo ""
@@ -71,7 +111,7 @@ echo ""
 
 case ${menu} in
 1 )
-  # ginna build menu
+  # Motorola ginna build menu
   clear
   BEGIN=$(date +%s)
   ginna
@@ -81,7 +121,7 @@ case ${menu} in
 #############################################################
 
 2 )
-  # olivewood build menu
+  # Xiaomi Olivewood build menu
   clear
   BEGIN=$(date +%s)
   olivewood
@@ -89,8 +129,54 @@ case ${menu} in
   clear
 ;;
 #############################################################
-
 3 )
+  # samsung beyond0qlte build menu
+  clear
+  BEGIN=$(date +%s)
+  beyond0qlte
+  END=$(date +%s)
+  clear
+;;
+#############################################################
+4 )
+  # samsung beyond1qlte build menu
+  clear
+  BEGIN=$(date +%s)
+  beyond1qlte
+  END=$(date +%s)
+  clear
+;;
+#############################################################
+5 )
+  # samsung beyond2qlte build menu
+  clear
+  BEGIN=$(date +%s)
+  beyond2qlte
+  END=$(date +%s)
+  clear
+;;
+#############################################################
+6 )
+  # samsung d1q build menu
+  clear
+  BEGIN=$(date +%s)
+  d1q
+  END=$(date +%s)
+  clear
+;;
+#############################################################
+7 )
+  # samsung d2q build menu
+  clear
+  BEGIN=$(date +%s)
+  d2q
+  END=$(date +%s)
+  clear
+;;
+#############################################################
+## section4
+#############################################################
+8 )
   # Add device to build menu
   clear
   BEGIN=$(date +%s)
@@ -99,7 +185,6 @@ case ${menu} in
   clear
 ;;
 #############################################################
-## section4
 #############################################################
 0 ) 
   # Return To Main Menu
