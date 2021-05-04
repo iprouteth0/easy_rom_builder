@@ -39,7 +39,7 @@ fi
 
 
 
-sed -i "s|vendor/lineage/config|vendor/$VENDOR_CONFIG/config|" device/samsung/$DEVICENAME/lineage_$DEVICENAME
+sed -i "s|vendor/lineage/config|vendor/$VENDOR_CONFIG/config|" device/samsung/$DEVICENAME/lineage_$DEVICENAME.mk
 sed -i "s|lineage_$DEVICENAME|$ROMNAME\_$DEVICENAME|" device/samsung/$DEVICENAME/lineage_$DEVICENAME.mk
 sed -i "s|lineage_|$ROMNAME\_|" device/samsung/$DEVICENAME/AndroidProducts.mk
 cp device/samsung/$DEVICENAME/lineage.dependencies device/samsung/$DEVICENAME/$ROMNAME.dependencies
