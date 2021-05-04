@@ -32,6 +32,7 @@ ginna() {
   # ginna Build menu
   export DEVICEDIR="device/motorola/ginna"
   export DEVICENAME=ginna
+  export SOURCESCRIPT=ginna
   . Build_script.sh  
 }
 
@@ -39,6 +40,7 @@ olivewood() {
   # Olivewood Build menu
   export DEVICEDIR="device/xiaomi/olivewood"
   export DEVICENAME=olivewood
+  export SOURCESCRIPT=olivewood
   . Build_script.sh 
 }
 
@@ -46,6 +48,7 @@ beyond0qlte() {
   # samsung beyond0qlte Build menu
   export DEVICEDIR="device/samsung/beyond0qlte"
   export DEVICENAME=beyond0qlte
+  export SOURCESCRIPT=sm8150
   . Build_script.sh 
 }
 
@@ -53,6 +56,7 @@ beyond1qlte() {
   # samsung beyond1qlte Build menu
   export DEVICEDIR="device/samsung/beyond1qlte"
   export DEVICENAME=beyond1qlte
+  export SOURCESCRIPT=sm8150
   . Build_script.sh 
 }
 
@@ -60,13 +64,15 @@ beyond2qlte() {
   # samsung beyond2qlte Build menu
   export DEVICEDIR="device/samsung/beyond2qlte"
   export DEVICENAME=beyond2qlte
+  export SOURCESCRIPT=sm8150
   . Build_script.sh 
 }
 
 d1q() {
   # samsung d1q Build menu
   export DEVICEDIR="device/samsung/d1q"
-  export DEVICENAME=olivewood
+  export DEVICENAME=d1q
+  export SOURCESCRIPT=sm8150
   . Build_script.sh 
 }
 
@@ -74,6 +80,7 @@ d2q() {
   # samsung d2q Build menu
   export DEVICEDIR="device/samsung/d2q"
   export DEVICENAME=d2q
+  export SOURCESCRIPT=sm8150
   . Build_script.sh 
 }
 
