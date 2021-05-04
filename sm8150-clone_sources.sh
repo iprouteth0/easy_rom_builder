@@ -37,7 +37,13 @@ else
 echo "libqsap_sdk already present"
 fi
 
-
+LINEAGE_SDK="lineage-sdk"
+if [[ ! -d $LINEAGE_SDK ]]
+then
+git clone https://github.com/LineageOS/android_lineage-sdk lineage-sdk/
+else
+echo "lineage-sdk already present"
+fi
 
 sed -i "s|vendor/lineage/config|vendor/$VENDOR_CONFIG/config|" device/samsung/$DEVICENAME/lineage_$DEVICENAME.mk
 sed -i "s|lineage_$DEVICENAME|$ROMNAME\_$DEVICENAME|" device/samsung/$DEVICENAME/lineage_$DEVICENAME.mk
