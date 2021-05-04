@@ -2,7 +2,7 @@
 
 
 ## device trees-common
-git clone https://github.com/sm8150-samsung/android_device_samsung_sm8150-common device/Samsung/sm8150-common
+git clone https://github.com/sm8150-samsung/android_device_samsung_sm8150-common device/samsung/sm8150-common
 
 ## device trees
 if [[ $DEVICENAME = beyond2qlte ]]
@@ -19,11 +19,11 @@ then
 git clone https://github.com/sm8150-samsung/android_device_samsung_d2q device/samsung/d2q
 elif [[ $DEVICENAME = d1q ]]
 then
-git clone https://github.com/sm8150-samsung/android_device_samsung_d1q device/Samsung/d1q
+git clone https://github.com/sm8150-samsung/android_device_samsung_d1q device/samsung/d1q
 fi
 
 ## kernel tree
-git clone https://github.com/sm8150-samsung/android_kernel_samsung_sm8150-common kernel/Samsung/sm8150-common
+git clone https://github.com/sm8150-samsung/android_kernel_samsung_sm8150-common kernel/samsung/sm8150-common
 
 ## vendor tree
 git clone https://github.com/sm8150-samsung/android_vendor_samsung_sm8150-common vendor/samsung/sm8150-common
