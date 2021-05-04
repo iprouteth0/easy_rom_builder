@@ -1,7 +1,6 @@
 #! /bin/bash
 ## Build script variables to set
 SOURCEFILE=Android.bp
-#DEVICEDIR="device/xiaomi/olivewood"
 
 ## Check if sources are present and download if not present
 if [[ ! -d $ROMDIR ]]
@@ -17,7 +16,7 @@ repo init -u $ROMGIT
 repo sync -j$(nproc --ignore=8)
 	if [[ ! -d $DEVICEDIR ]]
 	then
-	. $THISDIR/$DEVICENAME-clone_sources.sh 
+	. $THISDIR/$SOURCESCRIPT-clone_sources.sh 
 	else
 	echo "Device source already present"
 	fi
@@ -40,7 +39,7 @@ else
 
 	if [[ ! -d $DEVICEDIR ]]
         then
-        . $THISDIR/$DEVICENAME-clone_sources.sh
+        . $THISDIR/$SOURCESCRIPT-clone_sources.sh
         else
         echo "Device source already present"
         fi
