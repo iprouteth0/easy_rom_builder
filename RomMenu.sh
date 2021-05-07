@@ -856,7 +856,7 @@ rom76() {
         export ROMNAME=octavi
         export ROMDIR=$ROMNAME
         export ROMBUILD=bacon
-        export VENDOR_CONFIG=$ROMNAME ; . DeviceMenu.sh
+        export VENDOR_CONFIG=gzosp ; . DeviceMenu.sh
   read
 }
 
