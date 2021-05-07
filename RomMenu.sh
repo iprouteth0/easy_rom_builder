@@ -654,7 +654,7 @@ rom57() {
 
 
 rom58() {
-  ##  relosded
+  ##  reloaded
         export ROMGIT=https://github.com/ReloadedOS/android_manifest/tree/r
         export ROMNAME=reloaded
 	export ROMDIR=$ROMNAME
@@ -850,6 +850,16 @@ rom75() {
   read
 }
 
+rom76() {
+  ## octavi is
+        export ROMDIR="https://github.com/Octavi-OS/platform_manifest"
+        export ROMNAME=octavi
+        export ROMDIR=$ROMNAME
+        export ROMBUILD=bacon
+        export VENDOR_CONFIG=$ROMNAME ; . DeviceMenu.sh
+  read
+}
+
 # ----------------------------------------------------------
 menu=
 until [ "$menu" = "0" ]; do
@@ -932,6 +942,7 @@ echo "${red}==${reset}${yellow}  72 - vortex os                   ${reset}${red}
 echo "${red}==${reset}${yellow}  73 - wave os                     ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}  74 - yaap                        ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}  75 - zenx                        ${reset}${red}==${reset}"
+echo "${red}==${reset}${yellow}  76 - octavi                      ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}                                   ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}  00 - setup build environment     ${reset}${red}==${reset}"
 echo "${red}==${reset}${yellow}   0 - exit build menu             ${reset}${red}==${reset}"
@@ -1910,6 +1921,19 @@ case ${menu} in
   clear
 ;;
 #############################################################
+#############################################################
+
+76 )
+  # #
+  clear
+  BEGIN=$(date +%s)
+  rom76
+  END=$(date +%s)
+  echo "${green}Android 10 Roms Uploaded!!${reset}"
+  echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
+  clear
+;;
+##############################################################
 ##########################################################################################################################
 
 00 ) 
