@@ -40,7 +40,7 @@ elif [[ $KERNEL_CHOICE = 3 ]]
 then git clone https://github.com/iprouteth0/kernel_cherry_sdm439 kernel/xiaomi/sdm439
 elif [[ $KERNEL_CHOICE = 4 ]]
 then git clone https://github.com/iprouteth0/RALegacy_kernel_sdm439 kernel/xiaomi/sdm439
-elif [[ ! $KERNEL_CHOICE  =~ [0-4] ]]
+elif [[ ! $KERNEL_CHOICE  =~ [1-4] ]]
 then git clone https://github.com/iprouteth0/android_kernel_xiaomi_sdm439 kernel/xiaomi/sdm439
 fi
 
