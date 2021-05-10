@@ -29,19 +29,27 @@ echo "1 for Joel's a10 kernel"
 echo "2 for Joel's a11 kernel
 echo "3 for cherry kernel"
 echo "4 for RALegacy kernel"
+echo "5 for lolz kernel"
 read KERNEL_CHOICE
 rm -rf kernel/xiaomi/sdm439
 if [[ $KERNEL_CHOICE = 1 ]]
 then
 git clone https://github.com/iprouteth0/android_kernel_xiaomi_sdm439 kernel/xiaomi/sdm439
 elif [[ $KERNEL_CHOICE = 2 ]]
-then git clone https://github.com/Xiaomi-SDM439-Development/android_kernel_xiaomi_sdm439 kernel/xiaomi/sdm439
+then 
+git clone https://github.com/Xiaomi-SDM439-Development/android_kernel_xiaomi_sdm439 kernel/xiaomi/sdm439
 elif [[ $KERNEL_CHOICE = 3 ]]
-then git clone https://github.com/iprouteth0/kernel_cherry_sdm439 kernel/xiaomi/sdm439
+then 
+git clone https://github.com/iprouteth0/kernel_cherry_sdm439 kernel/xiaomi/sdm439
 elif [[ $KERNEL_CHOICE = 4 ]]
-then git clone https://github.com/iprouteth0/RALegacy_kernel_sdm439 kernel/xiaomi/sdm439
-elif [[ ! $KERNEL_CHOICE  =~ [1-4] ]]
-then git clone https://github.com/iprouteth0/android_kernel_xiaomi_sdm439 kernel/xiaomi/sdm439
+then 
+git clone https://github.com/iprouteth0/RALegacy_kernel_sdm439 kernel/xiaomi/sdm439
+elif [[ $KERNEL_CHOICE = 5 ]]
+then 
+git clone https://github.com/iprouteth0/lolz_kernel_redmi8 kernel/xiaomi/sdm439
+elif [[ ! $KERNEL_CHOICE  =~ [1-5] ]]
+then 
+git clone https://github.com/iprouteth0/android_kernel_xiaomi_sdm439 kernel/xiaomi/sdm439
 fi
 
 ## match device tree files to rom tree
