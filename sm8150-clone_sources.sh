@@ -28,6 +28,7 @@ git clone https://github.com/sm8150-samsung/android_kernel_samsung_sm8150-common
 ## vendor tree
 git clone https://github.com/sm8150-samsung/android_vendor_samsung_sm8150-common vendor/samsung/sm8150-common
 
+git clone https://github.com/LineageOS/android_hardware_samsung hardware/samsung
 
 LIBQSAP_SDK="system/qcom/softap"
 if [[ ! -d $LIBQSAP_SDK ]]
