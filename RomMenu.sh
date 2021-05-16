@@ -862,7 +862,8 @@ rom76() {
 
 #  until [ "$menu" = "0" ]; do
 
-HEIGHT=30                                                       WIDTH=50
+HEIGHT=30
+WIDTH=50
 CHOICE_HEIGHT=8
 BACKTITLE="ROM-MENU"
 TITLE="ROM Menu"
@@ -951,17 +952,6 @@ OPTIONS=(1 - 404
         77 - setup build environment      
         78 - exit build menu              
 )
-    clear
-
-while [[ ! $CHOICE =~ [1-78] ]]; do
-    CHOICE=$(dialog --clear \
-                    --backtitle "$BACKTITLE" \
-                    --title "$TITLE" \
-                    --menu "$MENU" \
-                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                    "${OPTIONS[@]}" \
-                    2>&1 >/dev/tty)
-
 
 
 case $CHOICE in
@@ -1944,5 +1934,21 @@ case $CHOICE in
   END=$(date +%s)
   echo "${green}Android 10 Roms Uploaded!!${reset}"
   echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
-
+;;
 esac
+
+
+
+
+while [[ ! $CHOICE =~ [1-78] ]]; do
+    CHOICE=$(dialog --clear \
+                    --backtitle "$BACKTITLE" \
+                    --title "$TITLE" \
+                    --menu "$MENU" \
+                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                    "${OPTIONS[@]}" \
+                    2>&1 >/dev/tty)
+
+
+
+done
