@@ -860,98 +860,108 @@ rom76() {
   read
 }
 
-# ----------------------------------------------------------
-menu=
-until [ "$menu" = "0" ]; do
-echo ""
-echo "${red}=========================================================${reset}"
-echo "${red}==${reset}${green}                Upload Menu                          ${reset}${red}==${reset}"
-echo "${red}=========================================================${reset}"
-echo "${red}==${reset}${yellow}   1 - 404                         ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   2 - abc                         ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   3 - aicp                        ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   4 - amy                         ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   5 - aosip                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   6 - aospa                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   7 - aospify                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   8 - aex                         ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   9 - andromeda                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  10 - arrow                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  11 - awaken                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  12 - baikal                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  13 - benzo                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  14 - bliss                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  15 - calyx                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  16 - candy                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  17 - carbon                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  18 - cesium                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  19 - cherish                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  20 - colt os                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  21 - conquer                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  22 - corvus                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  23 - crdroid                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  24 - cygnus                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  25 - descendant                  ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  26 - dirty unicorns              ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  27 - dot os                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  28 - evolution x                 ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  29 - explosive lobster           ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  30 - freaky os                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  31 - graphene                    ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  32 - gzosp                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  33 - halogen os                  ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  34 - havoc                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  35 - hentai os                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  36 - hornbill os                 ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  37 - hycon os                    ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  38 - kang os                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  39 - kraken                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  40 - komodo                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  41 - legion                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  42 - lighthouse                  ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  43 - msm xtended                 ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  44 - mallu os                    ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  45 - nitrogen os                 ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  46 - nezuko                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  47 - nusantara                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  48 - omnirom                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  49 - palladium                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  50 - pixel experience            ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  51 - pixeldust                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  52 - pixel extended              ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  53 - pixys                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  54 - potato                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  55 - project fluid               ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  56 - project streak              ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  57 - proton aosp                 ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  58 - reloaded os                 ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  59 - revenge os                  ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  60 - rohie os                    ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  61 - sakura                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  62 - spark rom                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  63 - spice os                    ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  64 - stag os                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  65 - statix                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  66 - stormbreaker                ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  67 - styx                        ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  68 - superior                    ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  69 - syberia                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  70 - tenx os                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  71 - titanium os                 ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  72 - vortex os                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  73 - wave os                     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  74 - yaap                        ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  75 - zenx                        ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  76 - octavi                      ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}                                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}  00 - setup build environment     ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   0 - exit build menu             ${reset}${red}==${reset}"
-echo "${red}======================================================${reset}"
-echo ""
-echo -n "Enter selection: "
-read menu
-echo ""
-case ${menu} in
+#  until [ "$menu" = "0" ]; do
+
+HEIGHT=30                                                       WIDTH=50
+CHOICE_HEIGHT=8
+BACKTITLE="ROM-MENU"
+TITLE="ROM Menu"
+MENU="Choose one of the following options:"
+
+
+while [[ ! $CHOICE =~ [1-78] ]]; do
+    CHOICE=$(dialog --clear \
+                    --backtitle "$BACKTITLE" \
+                    --title "$TITLE" \
+                    --menu "$MENU" \
+                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                    "${OPTIONS[@]}" \
+                    2>&1 >/dev/tty)
+
+
+OPTIONS=(1 - 404                          
+         2 - abc                          
+         3 - aicp                         
+         4 - amy                          
+         5 - aosip                        
+         6 - aospa                        
+         7 - aospify                      
+         8 - aex                          
+         9 - andromeda                    
+        10 - arrow                        
+        11 - awaken                       
+        12 - baikal                       
+        13 - benzo                        
+        14 - bliss                        
+        15 - calyx                        
+        16 - candy                        
+        17 - carbon                       
+        18 - cesium                       
+        19 - cherish                      
+        20 - colt os                      
+        21 - conquer                      
+        22 - corvus                       
+        23 - crdroid                      
+        24 - cygnus                       
+        25 - descendant                   
+        26 - dirty unicorns               
+        27 - dot os                       
+        28 - evolution x                  
+        29 - explosive lobster            
+        30 - freaky os                    
+        31 - graphene                     
+        32 - gzosp                        
+        33 - halogen os                   
+        34 - havoc                        
+        35 - hentai os                    
+        36 - hornbill os                  
+        37 - hycon os                     
+        38 - kang os                      
+        39 - kraken                       
+        40 - komodo                       
+        41 - legion                       
+        42 - lighthouse                   
+        43 - msm xtended                  
+        44 - mallu os                     
+        45 - nitrogen os                  
+        46 - nezuko                       
+        47 - nusantara                    
+        48 - omnirom                      
+        49 - palladium                    
+        50 - pixel experience             
+        51 - pixeldust                    
+        52 - pixel extended               
+        53 - pixys                        
+        54 - potato                       
+        55 - project fluid                
+        56 - project streak               
+        57 - proton aosp                  
+        58 - reloaded os                  
+        59 - revenge os                   
+        60 - rohie os                     
+        61 - sakura                       
+        62 - spark rom                    
+        63 - spice os                     
+        64 - stag os                      
+        65 - statix                       
+        66 - stormbreaker                 
+        67 - styx                         
+        68 - superior                     
+        69 - syberia                      
+        70 - tenx os                      
+        71 - titanium os                  
+        72 - vortex os                    
+        73 - wave os                      
+        74 - yaap                         
+        75 - zenx                         
+        76 - octavi                       
+        77 - setup build environment      
+        78 - exit build menu              
+)
+    clear
+
+
+case $CHOICE in
 1 )
   # 
   clear
@@ -1931,40 +1941,5 @@ case ${menu} in
   END=$(date +%s)
   echo "${green}Android 10 Roms Uploaded!!${reset}"
   echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
-  clear
-;;
-##############################################################
-##########################################################################################################################
 
-00 ) 
-  # Setup build environment
-  cd ${THISDIR}
-  echo "Configuring build environment"
-  git clone https://github.com/iprouteth0/scripts
-  cd scripts/setup
-  . android_build_env.sh
-;; 
-#############################################################
-##########################################################################################################################
-
-0 ) 
-  # Return To prompt
-  cd ${THISDIR}
-  echo "Exiting..."
-;; 
-* ) clear
-    echo "Wrong Choice AssFace, 1-10, 0 to Return to Main Menu"
-    sleep 1
-    echo " "
-    echo "4"
-    sleep 1
-    echo "3"
-    sleep 1
-    echo "2"
-    sleep 1
-    echo "1"
-    sleep 1
-    clear
-    esac
-done
-#############################################################
+esac
