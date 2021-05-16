@@ -869,14 +869,7 @@ TITLE="ROM Menu"
 MENU="Choose one of the following options:"
 
 
-while [[ ! $CHOICE =~ [1-78] ]]; do
-    CHOICE=$(dialog --clear \
-                    --backtitle "$BACKTITLE" \
-                    --title "$TITLE" \
-                    --menu "$MENU" \
-                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                    "${OPTIONS[@]}" \
-                    2>&1 >/dev/tty)
+
 
 
 OPTIONS=(1 - 404                          
@@ -959,6 +952,16 @@ OPTIONS=(1 - 404
         78 - exit build menu              
 )
     clear
+
+while [[ ! $CHOICE =~ [1-78] ]]; do
+    CHOICE=$(dialog --clear \
+                    --backtitle "$BACKTITLE" \
+                    --title "$TITLE" \
+                    --menu "$MENU" \
+                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                    "${OPTIONS[@]}" \
+                    2>&1 >/dev/tty)
+
 
 
 case $CHOICE in
