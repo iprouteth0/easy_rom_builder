@@ -9,12 +9,33 @@
 #
 #      http://www.apache.org/licenses/LICENSE-2.0
 #
+HEIGHT=30
+WIDTH=50
+CHOICE_HEIGHT=8
+BACKTITLE="DEVICE MENU"
+TITLE="Device Menu"
+MENU="Choose one of the following options:"
 
-clear
+OPTIONS=(1 "Moto E 2020 (ginna)"                                             
+         2 "Xiaomi 8A Dual (olivewood)"
+         3 "beyond0qlte"
+         4 "beyond1qlte"
+         5 "beyond2qlte"
+         6 "d1q"
+         7 "d2q"
+         8 "Go Back to Main"
 
-# Variables
-SOURCE=~/Android/BuildScripts/ginna
-SOURCE2=~/Android
+          )
+
+while [[ ! $CHOICE =~ [1-8] ]]; do
+    CHOICE=$(dialog --clear \
+                    --backtitle "$BACKTITLE" \
+                    --title "$TITLE" \
+                    --menu "$MENU" \
+                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                    "${OPTIONS[@]}" \
+                    2>&1 >/dev/tty)
+#clear
 
 # Colors
 black=`tput setaf 0`
@@ -92,31 +113,31 @@ adddevice() {
 ## section1
 
 # ----------------------------------------------------------
-menu=
-until [ "$menu" = "0" ]; do
-echo ""
-echo "${red}=========================================================${reset}"
-echo "${red}==${reset}${green}                Moto E 2020 Build Menu                ${reset}${red}==${reset}"
-echo "${red}=========================================================${reset}"
-echo "${red}==${reset}${yellow}   1 - Motorola E 2020 (ginna)                       ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   2 - Xiaomi 8A Dual (olivewood)                    ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   3 - Samsung beyond0qlte                           ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   4 - Samsung beyond1qlte                           ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   5 - Samsung beyond2qlte                           ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   6 - Samsung d1q                                   ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   7 - Samsung d2q                                   ${reset}${red}==${reset}"
-## section2
-echo "${red}==${reset}${yellow}   8 - Add Device to Menu                            ${reset}${red}==${reset}"
-echo "${red}==${reset}${yellow}   0 - Return To Main Menu                           ${reset}${red}==${reset}"
-echo "${red}=========================================================${reset}"
-echo ""
-echo -n "Enter selection: "
-read menu
-echo ""
+#menu=
+#until [ "$menu" = "0" ]; do
+#echo ""
+#echo "${red}=========================================================${reset}"
+#echo "${red}==${reset}${green}                Moto E 2020 Build Menu                ${reset}${red}==${reset}"
+#echo "${red}=========================================================${reset}"
+#echo "${red}==${reset}${yellow}   1 - Motorola E 2020 (ginna)                       ${reset}${red}==${reset}"
+#echo "${red}==${reset}${yellow}   2 - Xiaomi 8A Dual (olivewood)                    ${reset}${red}==${reset}"
+#echo "${red}==${reset}${yellow}   3 - Samsung beyond0qlte                           ${reset}${red}==${reset}"
+#echo "${red}==${reset}${yellow}   4 - Samsung beyond1qlte                           ${reset}${red}==${reset}"
+#echo "${red}==${reset}${yellow}   5 - Samsung beyond2qlte                           ${reset}${red}==${reset}"
+#echo "${red}==${reset}${yellow}   6 - Samsung d1q                                   ${reset}${red}==${reset}"
+#echo "${red}==${reset}${yellow}   7 - Samsung d2q                                   ${reset}${red}==${reset}"
+### section2
+#echo "${red}==${reset}${yellow}   8 - Add Device to Menu                            ${reset}${red}==${reset}"
+#echo "${red}==${reset}${yellow}   0 - Return To Main Menu                           ${reset}${red}==${reset}"
+#echo "${red}=========================================================${reset}"
+#echo ""
+#echo -n "Enter selection: "
+#read menu
+#echo ""
 
 ## section3
 
-case ${menu} in
+case $CHOICE in
 1 )
   # Motorola ginna build menu
   clear
