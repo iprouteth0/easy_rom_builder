@@ -110,32 +110,7 @@ adddevice() {
   . AddDevice.sh
 }
 
-## section1
-
-# ----------------------------------------------------------
-#menu=
-#until [ "$menu" = "0" ]; do
-#echo ""
-#echo "${red}=========================================================${reset}"
-#echo "${red}==${reset}${green}                Moto E 2020 Build Menu                ${reset}${red}==${reset}"
-#echo "${red}=========================================================${reset}"
-#echo "${red}==${reset}${yellow}   1 - Motorola E 2020 (ginna)                       ${reset}${red}==${reset}"
-#echo "${red}==${reset}${yellow}   2 - Xiaomi 8A Dual (olivewood)                    ${reset}${red}==${reset}"
-#echo "${red}==${reset}${yellow}   3 - Samsung beyond0qlte                           ${reset}${red}==${reset}"
-#echo "${red}==${reset}${yellow}   4 - Samsung beyond1qlte                           ${reset}${red}==${reset}"
-#echo "${red}==${reset}${yellow}   5 - Samsung beyond2qlte                           ${reset}${red}==${reset}"
-#echo "${red}==${reset}${yellow}   6 - Samsung d1q                                   ${reset}${red}==${reset}"
-#echo "${red}==${reset}${yellow}   7 - Samsung d2q                                   ${reset}${red}==${reset}"
-### section2
-#echo "${red}==${reset}${yellow}   8 - Add Device to Menu                            ${reset}${red}==${reset}"
-#echo "${red}==${reset}${yellow}   0 - Return To Main Menu                           ${reset}${red}==${reset}"
-#echo "${red}=========================================================${reset}"
-#echo ""
-#echo -n "Enter selection: "
-#read menu
-#echo ""
-
-## section3
+###############
 
 case $CHOICE in
 1 )
