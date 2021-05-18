@@ -951,7 +951,7 @@ OPTIONS=(
 )
 
 
-while [[ ! $CHOICE =~ ^[0-9]{,2}$ ]]; do
+while [[ ! $CHOICE = 0 ]]; do
     CHOICE=$(dialog --clear \
                     --backtitle "$BACKTITLE" \
                     --title "$TITLE" \
