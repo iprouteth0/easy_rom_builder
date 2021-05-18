@@ -25,6 +25,106 @@ cyan=`tput setaf 6`
 white=`tput setaf 7`
 reset=`tput sgr0`
 
+
+HEIGHT=30
+WIDTH=50
+CHOICE_HEIGHT=8
+BACKTITLE="ROM-MENU"
+TITLE="ROM Menu"
+MENU="Choose one of the following options:"
+
+OPTIONS=(
+1 "404"
+2 "abc"
+3 "aicp"
+4 "amy"
+5 "aosip"
+6 "aospa"
+7 "aospify"
+8 "aex"
+9 "andromeda"
+10 "arrow"
+11 "awaken"
+12 "baikal"
+13 "benzo"
+14 "bliss"
+15 "calyx"
+16 "candy"
+17 "carbon"
+18 "cesium"
+19 "cherish"
+20 "colt os"
+21 "conquer"
+22 "corvus"
+23 "crdroid"
+24 "cygnus"
+25 "descendant"
+26 "dirty unicorns"
+27 "dot os"
+28 "evolution x"
+29 "explosive lobster"
+30 "freaky os"
+31 "graphene"
+32 "gzosp"
+33 "halogen os"
+34 "havoc"
+35 "hentai os"
+36 "hornbill os"
+37 "hycon os"
+38 "kang os"
+39 "kraken"
+40 "komodo"
+41 "legion"
+42 "lighthouse"
+43 "msm xtended"
+44 "mallu os"
+45 "nitrogen os"
+46 "nezuko"
+47 "nusantara"
+48 "omnirom"
+49 "palladium"
+50 "pixel experience"
+51 "pixeldust"
+52 "pixel extended"
+53 "pixys"
+54 "potato"
+55 "project fluid"
+56 "project streak"
+57 "proton aosp"
+58 "reloaded os"
+59 "revenge os"
+60 "rohie os"
+61 "sakura"
+62 "spark rom"
+63 "spice os"
+64 "stag os"
+65 "statix"
+66 "stormbreaker"
+67 "styx"
+68 "superior"
+69 "syberia"
+70 "tenx os"
+71 "titanium os"
+72 "vortex os"
+73 "wave os"
+74 "yaap"
+75 "zenx"
+76 "octavi"
+77 "setup build environment"
+78 "exit build menu"
+)
+
+
+while [[ ! $CHOICE =~ ^[0-9]{,2}$ ]]; do
+    CHOICE=$(dialog --clear \
+                    --backtitle "$BACKTITLE" \
+                    --title "$TITLE" \
+                    --menu "$MENU" \
+                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                    "${OPTIONS[@]}" \
+                    2>&1 >/dev/tty)
+
+
 #functions
 rom1() {
   # project 404
@@ -857,106 +957,6 @@ rom76() {
 }
 
 #  until [ "$menu" = "0" ]; do
-
-HEIGHT=30
-WIDTH=50
-CHOICE_HEIGHT=8
-BACKTITLE="ROM-MENU"
-TITLE="ROM Menu"
-MENU="Choose one of the following options:"
-
-OPTIONS=(
-1 "404"
-2 "abc"
-3 "aicp"
-4 "amy"
-5 "aosip"
-6 "aospa"
-7 "aospify"
-8 "aex"
-9 "andromeda"
-10 "arrow"
-11 "awaken"
-12 "baikal"
-13 "benzo"
-14 "bliss"
-15 "calyx"
-16 "candy"
-17 "carbon"
-18 "cesium"
-19 "cherish"
-20 "colt os"
-21 "conquer"
-22 "corvus"
-23 "crdroid"
-24 "cygnus"
-25 "descendant"
-26 "dirty unicorns"
-27 "dot os"
-28 "evolution x"
-29 "explosive lobster"
-30 "freaky os"
-31 "graphene"
-32 "gzosp"
-33 "halogen os"
-34 "havoc"
-35 "hentai os"
-36 "hornbill os"
-37 "hycon os"
-38 "kang os"
-39 "kraken"
-40 "komodo"
-41 "legion"
-42 "lighthouse"
-43 "msm xtended"
-44 "mallu os"
-45 "nitrogen os"
-46 "nezuko"
-47 "nusantara"
-48 "omnirom"
-49 "palladium"
-50 "pixel experience"
-51 "pixeldust"
-52 "pixel extended"
-53 "pixys"
-54 "potato"
-55 "project fluid"
-56 "project streak"
-57 "proton aosp"
-58 "reloaded os"
-59 "revenge os"
-60 "rohie os"
-61 "sakura"
-62 "spark rom"
-63 "spice os"
-64 "stag os"
-65 "statix"
-66 "stormbreaker"
-67 "styx"
-68 "superior"
-69 "syberia"
-70 "tenx os"
-71 "titanium os"
-72 "vortex os"
-73 "wave os"
-74 "yaap"
-75 "zenx"
-76 "octavi"
-77 "setup build environment"
-78 "exit build menu"
-)
-
-
-while [[ ! $CHOICE =~ ^[0-9]{,2}$ ]]; do
-    CHOICE=$(dialog --clear \
-                    --backtitle "$BACKTITLE" \
-                    --title "$TITLE" \
-                    --menu "$MENU" \
-                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                    "${OPTIONS[@]}" \
-                    2>&1 >/dev/tty)
-
-
 
 
 case $CHOICE in
