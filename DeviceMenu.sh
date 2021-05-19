@@ -104,7 +104,7 @@ OPTIONS=(1 "Moto E 2020 (ginna)"
 
           )
 
-while [[ ! $CHOICE =~ [1-8] ]]; do
+while [[ ! $CHOICE = 0 ]]; do
     CHOICE=$(dialog --clear \
                     --backtitle "$BACKTITLE" \
                     --title "$TITLE" \
