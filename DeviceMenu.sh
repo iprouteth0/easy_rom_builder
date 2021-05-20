@@ -79,6 +79,8 @@ d2q() {
   . Build_script.sh 
 }
 
+#section1
+
 adddevice() {
   # Add device to menu using scripts
   . AddDevice.sh
@@ -93,16 +95,18 @@ BACKTITLE="DEVICE MENU"
 TITLE="Device Menu"
 MENU="Choose one of the following options:"
 
-OPTIONS=(1 "Moto E 2020 (ginna)"                                             
-         2 "Xiaomi 8A Dual (olivewood)"
-         3 "beyond0qlte"
-         4 "beyond1qlte"
-         5 "beyond2qlte"
-         6 "d1q"
-         7 "d2q"
-         8 "Go Back to Main"
-
-          )
+OPTIONS=(
+1 "Moto E 2020 (ginna)"                                             
+2 "Xiaomi 8A Dual (olivewood)"
+3 "beyond0qlte"
+4 "beyond1qlte"
+5 "beyond2qlte"
+6 "d1q"
+7 "d2q"
+#section2
+99 "Add device to menu"
+0 "Go Back to Main"
+)
 
 while [[ ! $CHOICE = 0 ]]; do
     CHOICE=$(dialog --clear \
@@ -182,7 +186,7 @@ case $CHOICE in
 #############################################################
 ## section4
 #############################################################
-8 )
+99 )
   # Add device to build menu
   clear
   BEGIN=$(date +%s)
