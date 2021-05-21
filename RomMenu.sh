@@ -859,6 +859,12 @@ rom76() {
   read
 }
 
+rom999() {
+  ## octavi is
+        ./AddRom.sh
+  read
+}
+
 ##section1
 
 
@@ -951,6 +957,7 @@ OPTIONS=(
 76 "octavi"
 77 "setup build environment"
 78 "exit build menu"
+999 "Add ROM to list"
 ##section2
 
 )
@@ -1949,7 +1956,19 @@ case $CHOICE in
   echo "${green}Android 10 Roms Uploaded!!${reset}"
   echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
 ;;
+#############################################################
 
+999 )
+  # #
+  clear
+  BEGIN=$(date +%s)
+  rom999
+  END=$(date +%s)
+  echo "${green}Android 10 Roms Uploaded!!${reset}"
+  echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
+  clear
+;;
+#############################################################
 ##section4
 
 esac
