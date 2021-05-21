@@ -11,7 +11,7 @@ echo "or the name of the rom.  This is often specified on the git"
 echo "manifest page.  If it is not specified, use bacon."
 read MAKEROM
 echo "enter $ROMNAME here UNLESS your ROM uses a vendor directory"
-echo "that is different than the ROM name.  Most often this is seen
+echo "that is different than the ROM name.  Most often this is seen"
 echo "with aosp ROMs.  Check the ROM vendor repository"
 read VENDCONF
 export CALLROM
