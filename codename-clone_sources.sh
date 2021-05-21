@@ -1,7 +1,7 @@
 #! /bin/bash
 
 ## Device Tree
-git clone $DEVTRRURL device/$DEVICEMFG/$DEVICECODENAME
+git clone $DEVTREEURL device/$DEVICEMFG/$DEVICECODENAME
 if [[ $USESCOMMONTREE = 0 ]]
 then
 git clone $DEVICECOMMONTREE $DEVICECOMMONPATH
