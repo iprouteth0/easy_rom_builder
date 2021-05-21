@@ -26,7 +26,7 @@ echo "TARGET_KERNEL_CLANG_COMPILE=true" >> device/xiaomi/olivewood/BoardConfig.m
 #git clone https://github.com/MiCode/Xiaomi_Kernel_OpenSource/tree/olivewood-p-oss -b olivewood-p-oss kernel/xiaomi/sdm439
 echo "Please choose which kernel source you would like to use:"
 echo "1 for Joel's a10 kernel"
-echo "2 for Joel's a11 kernel
+echo "2 for Joel's a11 kernel"
 echo "3 for cherry kernel"
 echo "4 for RALegacy kernel"
 echo "5 for lolz kernel"
