@@ -867,7 +867,11 @@ rom999() {
   read
 }
 
-
+romQ() {
+#quit menu
+clear
+echo "Thank you for using iprouteth0's easy ROM builder!"
+}
 
 
 #  until [ "$menu" = "0" ]; do
@@ -957,12 +961,10 @@ OPTIONS=(
 74 "yaap"
 75 "zenx"
 76 "octavi"
-77 "setup build environment"
-78 "exit build menu"
 #section2
 998 "Setup build environment"
 999 "Add ROM to list"
-
+Q "Exit build menu"
 
 )
 
@@ -1980,6 +1982,28 @@ case $CHOICE in
   rom999
   END=$(date +%s)
   echo "${green}Android 10 Roms Uploaded!!${reset}"
+  echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
+  clear
+;;
+#############################################################
+999 )
+  # #
+  clear
+  BEGIN=$(date +%s)
+  rom999
+  END=$(date +%s)
+  echo "${green}Android 10 Roms Uploaded!!${reset}"
+  echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
+  clear
+;;
+#############################################################
+Q )
+  # #
+  clear
+  BEGIN=$(date +%s)
+  romQ
+  END=$(date +%s)
+  echo "${green}©iprouteth0 2021${reset}"
   echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
   clear
 ;;
