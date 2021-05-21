@@ -859,13 +859,15 @@ rom76() {
   read
 }
 
+##section1
+
 rom999() {
   ## octavi is
         ./AddRom.sh
   read
 }
 
-##section1
+
 
 
 #  until [ "$menu" = "0" ]; do
@@ -957,9 +959,10 @@ OPTIONS=(
 76 "octavi"
 77 "setup build environment"
 78 "exit build menu"
+#section2
 998 "Setup build environment"
 999 "Add ROM to list"
-##section2
+
 
 )
 
