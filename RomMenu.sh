@@ -869,6 +869,7 @@ rom999() {
 
 romQ() {
 #quit menu
+CHOICE=0
 clear
 echo "Thank you for using iprouteth0's easy ROM builder!"
 }
