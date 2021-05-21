@@ -1,0 +1,12 @@
+#############################################################
+
+75 )
+  # #
+  clear
+  BEGIN=$(date +%s)
+  rom75
+  END=$(date +%s)
+  echo "${green}Android 10 Roms Uploaded!!${reset}"
+  echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
+  clear
+;;
