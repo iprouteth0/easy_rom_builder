@@ -957,6 +957,7 @@ OPTIONS=(
 76 "octavi"
 77 "setup build environment"
 78 "exit build menu"
+998 "Setup build environment"
 999 "Add ROM to list"
 ##section2
 
@@ -1957,7 +1958,17 @@ case $CHOICE in
   echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
 ;;
 #############################################################
+##########################################################################################################################
 
+998 ) 
+  # Setup build environment
+  cd ${THISDIR}
+  echo "Configuring build environment"
+  git clone https://github.com/iprouteth0/scripts
+  cd scripts/setup
+  . android_build_env.sh
+;; 
+###################################################
 999 )
   # #
   clear
