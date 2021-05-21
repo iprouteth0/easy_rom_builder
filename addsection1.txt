@@ -3,5 +3,6 @@ CODENAME() {
   # CODENAME Build menu
   export DEVICEDIR="TREEDIR"
   export DEVICENAME=CODENAME
+  export SOURCESCRIPT=CODENAME
   . Build_script.sh
 }
