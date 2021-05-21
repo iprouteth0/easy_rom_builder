@@ -81,6 +81,11 @@ d2q() {
 
 #section1
 
+generatescript() {
+#
+./Generate_codename_clone_sources.sh
+}
+
 adddevice() {
   # Add device to menu using scripts
   . AddDevice.sh
@@ -104,6 +109,7 @@ OPTIONS=(
 6 "d1q"
 7 "d2q"
 #section2
+98 "generate device sources script"
 99 "Add device to menu"
 0 "Go Back to Main"
 )
@@ -186,6 +192,15 @@ case $CHOICE in
 #############################################################
 ## section4
 #############################################################
+98 )
+  # generate device sources script
+  clear
+  BEGIN=$(date +%s)
+  generatescript
+  END=$(date +%s)
+  clear
+;;
+###
 99 )
   # Add device to build menu
   clear
