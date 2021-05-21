@@ -1,9 +1,9 @@
-rom1() {
-  # project 404
-	export ROMGIT=https://github.com/P-404/android_manifest
-	export ROMNAME=p404
+romMENUNUMBER() {
+  # project CALLROM
+	export ROMGIT=GITURL
+	export ROMNAME=CALLROM
 	export ROMDIR=$ROMNAME
-	export ROMBUILD=p404
-	export VENDOR_CONFIG=$ROMNAME ; . DeviceMenu.sh
+	export ROMBUILD=MAKEROM
+	export VENDOR_CONFIG=VENDCONF ; . DeviceMenu.sh
   read
 }
