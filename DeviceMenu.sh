@@ -83,7 +83,7 @@ d2q() {
 
 generatescript() {
 #
-./Generate_codename_clone_sources.sh
+. Generate_codename_clone_sources.sh
 }
 
 adddevice() {

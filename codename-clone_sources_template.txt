@@ -11,10 +11,10 @@ echo "common trees not enabled"
 fi
 
 ## Vendor Tree
-if [[ $USESVENDORTREEPATH = 0 ]]
+if [[ $UVTP = 0 ]]
 then
 git clone VENDTREEURL VENDORTREEPATH
-elif [[ $USESVENDORTREEPATH = 1 ]]
+elif [[ $UVTP = 1 ]]
 then
 git clone VENDTREEURL vendor/DEVICEMFG/DEVICECODENAME
 fi
