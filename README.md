@@ -5,6 +5,13 @@ Simply clone this repo and run the following script to start.  There are current
 
 If you have not already done so, install git.
 
+I have added options for adding ROMs and adding new devices to the device menu.
+
+When your add a device, there are two required steps.
+
+1) Add your device to the device menu
+2) Generate the codename-clone_sources.sh script for your device
+
 ```
 sudo apt-get update ; sudo apt-get install -y git
 ```
@@ -23,5 +30,7 @@ Devices current included in the script
 - [x] Xiaomi 8a Dual
 - [x] Samsung Galaxy S10+ series (WIP)
 - [x] Add device menu option
+- [x] Add ROM to ROM menu option finished
+- [x] Generate codename-clone_sources.sh function added to device menu
 
 Huge thanks go to my mentor @PizzaG who I worked on the origin scripts to this project with.
