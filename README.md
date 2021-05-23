@@ -9,8 +9,11 @@ I have added options for adding ROMs and adding new devices to the device menu.
 
 When you add a device, there are two required steps.
 
-1) Add your device to the device menu
-2) Generate the codename-clone_sources.sh script for your device
+1) Add your device to the device menu (option 99 on device menu)
+2) Generate the codename-clone_sources.sh script for your device (option 98 on device menu)
+
+When generating codename-clone_sources.sh, options 7,8 and 9 are optional and
+are only used for common device trees and unified vendor trees.
 
 ```
 sudo apt-get update ; sudo apt-get install -y git
