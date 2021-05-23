@@ -7,7 +7,7 @@ If you have not already done so, install git.
 
 I have added options for adding ROMs and adding new devices to the device menu.
 
-When your add a device, there are two required steps.
+When you add a device, there are two required steps.
 
 1) Add your device to the device menu
 2) Generate the codename-clone_sources.sh script for your device
