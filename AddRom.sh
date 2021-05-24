@@ -1,36 +1,19 @@
-#! /bin/bash
-
-echo "Please enter the name of the rom"
-read CALLROM
-echo "Please enter device menu number to use"
-read MENUNUMBER
-echo "Please enter the GitHub url of the rom manifest and branch if desired"
-read GITURL
-echo "Please enter the make target of the rom.  Most often either bacon"
-echo "or the name of the rom.  This is often specified on the git"
-echo "manifest page.  If it is not specified, use bacon."
-read MAKEROM
-echo 'enter $ROMNAME here UNLESS your ROM uses a vendor directory'
-echo "that is different than the ROM name.  Most often this is seen"
-echo "with aosp ROMs.  Check the ROM vendor repository"
-read VENDCONF
-export CALLROM
-export MENUNUMBER
-export GITURL
-export MAKEROM
-export VENDCONF
-mkdir tmp/
-cp rom_addsection* tmp
-sed -i "s|CALLROM|$CALLROM|g" tmp/rom_addsection1.txt
-sed -i "s|CALLROM|$CALLROM|g" tmp/rom_addsection2.txt
-sed -i "s|GITURL|$GITURL|g" tmp/rom_addsection1.txt
-sed -i "s|MAKEROM|$MAKEROM|g" tmp/rom_addsection1.txt
-sed -i "s|VENDCONF|$VENDCONF|g" tmp/rom_addsection1.txt
-sed -i "s|MENUNUMBER|$MENUNUMBER|g" tmp/rom_addsection1.txt
-sed -i "s|MENUNUMBER|$MENUNUMBER|g" tmp/rom_addsection2.txt
-sed -i "s|MENUNUMBER|$MENUNUMBER|g" tmp/rom_addsection4.txt
-
-sed -i '/section1/r tmp/rom_addsection1.txt' RomMenu.sh
-sed -i '/section2/r tmp/rom_addsection2.txt' RomMenu.sh
-sed -i '/section4/r tmp/rom_addsection4.txt' RomMenu.sh
-rm -rf tmp/
+#!/bin/bash
+dialog --backtitle "Add ROM to ROM menu" --title "Rom - Form" \
+--form "\n'ROM make target' is most often bacon, but consult your ROM git readme.  For 'vendor config directory' use \$ROMNAME unless your rom uses a different vendor directory than the rom name.  This is most often seen with AOSP ROMs, but there are a few lineage based that do this too." 25 75 8 \
+"Name of ROM:" 1 1 "" 1 25 40 30  \
+"Menu number:" 2 1 "" 2 25 40 30  \
+"ROM git url:" 3 1 "" 3 25 40 30  \
+"ROM make target:" 4 1 "" 4 25 40 30  \
+"Vendor config directory:" 5 1 "" 5 25 40 30 > /tmp/out.tmp \
+2>&1 >/dev/tty
+# Start retrieving each line from temp file 1 by one with sed and declare variables as inputs
+export CALLROM=`sed -n 1p /tmp/out.tmp`
+export MENUNUMBER=`sed -n 2p /tmp/out.tmp`
+export GITURL=`sed -n 3p /tmp/out.tmp`
+export MAKEROM=`sed -n 4p /tmp/out.tmp`
+export VENDCONF=`sed -n 5p /tmp/out.tmp`
+# remove temporary file created
+rm -f /tmp/out.tmp
+#Write to output file the result
+echo $CALLROM , $MENUNUMBER , $GITURL , $MAKEROM , $VENDCONF >> testfile

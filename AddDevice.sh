@@ -1,14 +1,19 @@
-#! /bin/bash
+#!/bin/bash
+dialog --backtitle "Add device to device menu" --title "Add device - Form" \
+--form "\nAdd device to device menu" 15 80 7 \
+"Codename:" 1 1 "" 1 25 40 30  \
+"Menu number:" 2 1 "" 2 25 40 30  \
+"Tree directory:" 3 1 "" 3 25 40 30 > /tmp/out.tmp \
+2>&1 >/dev/tty
+# Start retrieving each line from temp file 1 by one with sed and declare variables as inputs
+export CODENAME=`sed -n 1p /tmp/out.tmp`
+export MENUNUMBER=`sed -n 2p /tmp/out.tmp`
+export TREEDIR=`sed -n 3p /tmp/out.tmp`
+# remove temporary file created
+rm -f /tmp/out.tmp
+#Write to output file the result
+#echo $CODENAME , $MENUNUMBER , $TREEDIR , >> testfile
 
-echo "Please enter your device codename"
-read CODENAME
-echo "Please enter device menu number to use"
-read MENUNUMBER
-echo "Please enter device directory used for device tree"
-read TREEDIR
-export CODENAME
-export MENUNUMBER
-export TREEDIR
 mkdir tmp/
 cp addsection* tmp
 sed -i "s|CODENAME|$CODENAME|" tmp/addsection1.txt
