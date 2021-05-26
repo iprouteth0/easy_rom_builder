@@ -1,106 +1,87 @@
- #! /bin/bash
+ #!/bin/bash
+rm -rf tmp
 mkdir tmp
 cp codename-clone_sources_template.txt tmp/
-#functions
-devicetree() {
-#
-exec 3>&1
-export DEVTREEURL=$(dialog --title "name" --inputbox "Enter device tree git url:" 0 0 2>&1 1>&3)
-echo "you entered $DEVTREEURL"
-exec 3>&-
-read
-}
 
-vendortree() {
-#
-exec 3>&1
-export VENDTREEURL=$(dialog --title "name" --inputbox "Enter device tree git url:" 0 0 2>&1 1>&3)
-echo "you entered $VENDTREEURL"
-exec 3>&-
-read
-}
 
-kernelsources() {
-#
-exec 3>&1
-export KERNELSRCURL=$(dialog --title "name" --inputbox "Enter device tree git url:" 0 0 2>&1 1>&3)
-echo "you entered $KERNELSRCURL"
-exec 3>&-
-read
-}
+STARTCHOICE=$(dialog --checklist  "Choose toppings:" 10 40 2 \
+       0 "Use common device tree?" on \
+       1 "Use unified vendor tree?" on --separate-output --output-fd 1)
 
-devicecodename() {
-#
-exec 3>&1
-export DEVICECODENAME=$(dialog --title "name" --inputbox "Enter device codename:" 0 0 2>&1 1>&3)
-echo "you entered $DEVICECODENAME"
-exec 3>&-
-read
-}
 
-devicemfg() {
-#
-exec 3>&1
-export DEVICEMFG=$(dialog --title "name" --inputbox "Enter device manufacturer:" 0 0 2>&1 1>&3)
-echo "you entered $DEVICEMFG"
-exec 3>&-
-read
-}
-
-devicesoc() {
-#
-exec 3>&1
-export DEVICESOC=$(dialog --title "name" --inputbox "Enter device System on Chip, i.e. sdm845:" 0 0 2>&1 1>&3)
-echo "you entered $DEVICESOC"
-exec 3>&-
-read
-}
-
-devicecommontree() {
-#
-exec 3>&1
-export USESCOMMONTREE=$(dialog --title "COMMON TREE"  --yesno "Does your device use common trees?" 0 0 2>&1 1>&3)
-if [[ $USESCOMMONTREE = 0 ]]
+if [[ $STARTCHOICE = "0 1" ]]
 then
+#
+echo both
 sed -i 'i/Device Tree/USESCOMMONTREE=0/' tmp/codename-clone_sources_template.txt
-export DEVICECOMMONTREE=$(dialog --title "name" --inputbox "Enter device common tree git url.  Leave blank if not used" 0 0 2>&1 1>&3)
-echo "you entered $DEVICECOMMONTREE"
-read
-else
-echo "common tree nof selected"
-fi
-exec 3>&-
-read
-}
-
-devicecommonpath() {
-#
-exec 3>&1
-export DEVICECOMMONPATH=$(dialog --title "name" --inputbox "Enter device common tree path, i.e. device/xiaomi/sdm439-common" 0 0 2>&1 1>&3)
-echo "you entered $DEVICECOMMONPATH"
-exec 3>&-
-read
-}
-
-vendortreepath() {
-#
-exec 3>&1
-export UVTP=$(dialog --title "VENDOR TREE PATH"  --yesno "use vendor tree path different from device codename such as a unified vendor tree?" 0 0 2>&1 1>&3)
-if [[ $UVTP = 0 ]]
-then
 sed -i 'i/Device Tree/UVTP=0/' tmp/codename-clone_sources_template.txt
-export VENDORTREEPATH=$(dialog --title "name" --inputbox "Enter vendor tree path, i.e. vendor/xiaomi/olives" 0 0 2>&1 1>&3)
-echo "you entered $VENDORTREEPATH"
-read
-else
-echo "vendor tree path not selected"
+elif [[ $STARTCHOICE = "0" ]]
+then
+#
+echo common-device
+sed -i 'i/Device Tree/USESCOMMONTREE=0/' tmp/codename-clone_sources_template.txt
+elif [[ $STARTCHOICE = "1" ]]
+then
+#
+echo unified-vendor
+sed -i 'i/Device Tree/UVTP=0/' tmp/codename-clone_sources_template.txt
+elif [[ $STARTCHOICE = "" ]] 
+then
+#
+echo none
 fi
-exec 3>&-
-read
-}
 
-generate() {
+
+dialog --backtitle "Generate codename-clone_sources.sh" --title "Device trees - Form" \
+--form "\nFill in you device details.  Leave fields 7,8,9 blank if you device does not usep" 25 107 18 \
+"Device tree url:" 1 1 "" 1 40 60 30  \
+"Vendor tree url:" 2 1 "" 2 40 60 30  \
+"Kernel source url:" 3 1 "" 3 40 60 30  \
+"Device codename:" 4 1 "" 4 40 60 30  \
+"Device manufacturer:" 5 1 "" 5 40 60 30  \
+"Device SoC (for kernel path):" 6 1 "" 6 40 60 30  \
+"Device common tree (if used):" 7 1 "" 7 40 60 30  \
+"Device common tree path:" 8 1 "" 8 40 60 30  \
+"Vendor tree path (for unified vendor):" 9 1 "" 9 40 60 30 > /tmp/out.tmp 2>&1 >/dev/tty
+# Start retrieving each line from temp file 1 by one with sed and declare variables as inputs
+export DEVTREEURL=`sed -n 1p /tmp/out.tmp`
+export VENDTREEURL=`sed -n 2p /tmp/out.tmp`
+export KERNELSRCURL=`sed -n 3p /tmp/out.tmp`
+export DEVICECODENAME=`sed -n 4p /tmp/out.tmp`
+export DEVICEMFG=`sed -n 4p /tmp/out.tmp`
+export DEVICESOC=`sed -n 4p /tmp/out.tmp`
+export DEVICECOMMONTREE=`sed -n 4p /tmp/out.tmp`
+export DEVICECOMMONPATH=`sed -n 4p /tmp/out.tmp`
+export VENDORTREEPATH=`sed -n 4p /tmp/out.tmp`
+# remove temporary file created
+rm -f /tmp/out.tmp
+#Write to output file the result
+echo $DEVTREEURL , $VENDTREEURL , $KERNELSRCURL , $DEVICECODENAME, $DEVICEMFG, $DEVICESOC, $DEVICECOMMONTREE, $DEVICECOMMONPATH, $VENDORTREEPATH >> testfile
+
+
+ENDCHOICE=$(dialog --checklist  "Generate?:" 10 40 2 \
+       0 "Generate now?" on \
+       1 "reuturn to rom menu?" on --separate-output --output-fd 1)
+
+
+
+if [[ $ENDCHOICE = "0 1" ]] 
+then 
 # generate device sources script
+sed -i "s|DEVICECODENAME|$DEVICECODENAME|g" tmp/codename-clone_sources_template.txt 
+sed -i "s|DEVTREEURL|$DEVTREEURL|g" tmp/codename-clone_sources_template.txt 
+sed -i "s|VENDTREEURL|$VENDTREEURL|g" tmp/codename-clone_sources_template.txt 
+sed -i "s|KERNELSRCURL|$KERNELSRCURL|g" tmp/codename-clone_sources_template.txt 
+sed -i "s|DEVICEMFG|$DEVICEMFG|g" tmp/codename-clone_sources_template.txt 
+sed -i "s|DEVICESOC|$DEVICESOC|g" tmp/codename-clone_sources_template.txt 
+sed -i "s|DEVICECOMMONTREE|$DEVICECOMMONTREE|g" tmp/codename-clone_sources_template.txt 
+sed -i "s|DEVICECOMMONPATH|$DEVICECOMMONPATH|g" tmp/codename-clone_sources_template.txt 
+sed -i "s|VENDORTREEPATH|$VENDORTREEPATH|g" tmp/codename-clone_sources_template.txt 
+cp tmp/codename-clone_sources_template.txt $DEVICECODENAME-clone_sources.sh 
+rm -rf tmp/
+. DeviceMenu.sh
+elif [[ $ENDCHOICE = "0" ]]
+then
 sed -i "s|DEVICECODENAME|$DEVICECODENAME|g" tmp/codename-clone_sources_template.txt
 sed -i "s|DEVTREEURL|$DEVTREEURL|g" tmp/codename-clone_sources_template.txt
 sed -i "s|VENDTREEURL|$VENDTREEURL|g" tmp/codename-clone_sources_template.txt
@@ -112,151 +93,10 @@ sed -i "s|DEVICECOMMONPATH|$DEVICECOMMONPATH|g" tmp/codename-clone_sources_templ
 sed -i "s|VENDORTREEPATH|$VENDORTREEPATH|g" tmp/codename-clone_sources_template.txt
 cp tmp/codename-clone_sources_template.txt $DEVICECODENAME-clone_sources.sh
 rm -rf tmp/
-}
-
-devicemenu() {
-#
+elif [[ $ENDCHOICE = "1" ]]
+then
 . DeviceMenu.sh
-}
-
-rommenu() {
-#
-. RomMenu.sh
-}
-
-
-
-
-HEIGHT=30
-WIDTH=50
-CHOICE_HEIGHT=8
-BACKTITLE="SOURCES SCRIPT"
-TITLE="Sources script generator"
-MENU="Choose one of the following options:"
-
-OPTIONS=(
-1 "device tree git url"
-2 "vendor tree git url"
-3 "kernel source git url"
-4 "device codename"
-5 "device manufacturer"
-6 "device System on Chip (for kernel path)"
-7 "device common tree git url (if used)"
-8 "device common tree path"
-9 "vendor tree path (used for unified vendor)"
-10 "generate clone sources"
-11 "back to device menu"
-12 "back to rom menu"
-)
-
-while [[ ! $CHOICE = 0 ]]; do
-    CHOICE=$(dialog --clear \
-                    --backtitle "$BACKTITLE" \
-                    --title "$TITLE" \
-                    --menu "$MENU" \
-                    $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                    "${OPTIONS[@]}" \
-                    2>&1 >/dev/tty)
-
-
-
-case $CHOICE in
-1 )
-  # device tree
-  BEGIN=$(date +%s)
-  devicetree
-  END=$(date +%s)
-;;
-#############################################################
-
-2 )
-  # vendor tree
-  BEGIN=$(date +%s)
-  vendortree
-  END=$(date +%s)
-;;
-#############################################################
-
-3 )
-  # kernel sources
-  BEGIN=$(date +%s)
-  kernelsources
-  END=$(date +%s)
-;;
-#############################################################
-
-4 )
-  # device codename
-  BEGIN=$(date +%s)
-  devicecodename
-  END=$(date +%s)
-;;
-#############################################################
-
-5 )
-  # device manufacturer
-  BEGIN=$(date +%s)
-  devicemfg
-  END=$(date +%s)
-;;
-#############################################################
-
-6 )
-  # device SoC
-  BEGIN=$(date +%s)
-  devicesoc
-  END=$(date +%s)
-;;
-#############################################################
-
-7 )
-  # device common tree
-  BEGIN=$(date +%s)
-  devicecommontree
-  END=$(date +%s)
-;;
-#############################################################
-
-8 )
-  # device common path
-  BEGIN=$(date +%s)
-  devicecommonpath
-  END=$(date +%s)
-;;
-#############################################################
-
-9 )
-  # vendor tree path
-  BEGIN=$(date +%s)
-  vendortreepath
-  END=$(date +%s)
-;;
-#############################################################
-
-10 )
-  # generate
-  BEGIN=$(date +%s)
-  generate
-  END=$(date +%s)
-;;
-#############################################################
-
-11 )
- # device menu
-  BEGIN=$(date +%s)
-  devicemenu
-  END=$(date +%s)
-;;
-#############################################################
-
-12 )
- # rom menu
-  BEGIN=$(date +%s)
-  rommenu
-  END=$(date +%s)
-;;
-
-
-
-esac
-done
+elif [[ $ENDCHOICE = "" ]]
+then
+. Generate_codename-clone_sources.sh
+fi
