@@ -35,7 +35,7 @@ rom1() {
 	export ROMNAME=p404
 	export ROMDIR=$ROMNAME
 	export ROMBUILD=p404
-	export VENDOR_CONFIG=$ROMNAME ; . DeviceMenu.sh
+	export VENDOR_CONFIG=404 ; . DeviceMenu.sh
   read
 }
 
