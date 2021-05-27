@@ -5,7 +5,7 @@ git clone https://github.com/iprouteth0/device_xiaomi_olivewood device/xiaomi/ol
 git clone https://github.com/Xiaomi-SDM439-Development/android_device_xiaomi_sdm439 device/xiaomi/sdm439-common
 
 ## Vendor Tree
-git clone https://github.com/iprouteth0/vendor_xiaomi_olives -b test vendor/xiaomi/olives
+git clone https://github.com/iprouteth0/vendor_xiaomi_olives vendor/xiaomi/olives
 
 git clone https://github.com/Stargazer19/hardware_qcom_display-caf-msm8937 hardware/qcom-caf/msm8937/display
 git clone https://github.com/Stargazer19/hardware_qcom_media-caf-msm8937 hardware/qcom-caf/msm8937/media
