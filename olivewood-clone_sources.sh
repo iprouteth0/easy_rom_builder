@@ -2,7 +2,6 @@
 
 ## Device Tree
 git clone https://github.com/iprouteth0/device_xiaomi_olivewood device/xiaomi/olivewood
-git clone https://github.com/Xiaomi-SDM439-Development/android_device_xiaomi_sdm439 device/xiaomi/sdm439-common
 
 ## Vendor Tree
 git clone https://github.com/iprouteth0/vendor_xiaomi_olives vendor/xiaomi/olives
@@ -13,8 +12,6 @@ git clone https://github.com/Stargazer19/hardware_qcom_audio-caf-msm8937 hardwar
 cp hardware/qcom-caf/msm8996/Android.* hardware/qcom-caf/msm8937/
 cat $THIDIR/device_mk_changes-msm8937.txt >> device/xiaomi/olivewood/device.mk
 
-
-echo "TARGET_KERNEL_CLANG_COMPILE=true" >> device/xiaomi/olivewood/BoardConfig.mk
 ## kernel sources
 git clone https://github.com/Xiaomi-SDM439-Development/android_kernel_xiaomi_sdm439 -b a11/clean-iwlan kernel/xiaomi/sdm439
 
