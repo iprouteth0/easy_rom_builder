@@ -13,18 +13,18 @@ if [[ $STARTCHOICE = "0 1" ]]
 then
 #
 echo both
-sed -i 'i|Device Tree|USESCOMMONTREE=0|' tmp/codename-clone_sources_template.txt
-sed -i 'i|Device Tree|UVTP=0|' tmp/codename-clone_sources_template.txt
+sed -i '2 i\USESCOMMONTREE=0' tmp/codename-clone_sources_template.txt
+sed -i '3 i\UVTP=0' tmp/codename-clone_sources_template.txt
 elif [[ $STARTCHOICE = "0" ]]
 then
 #
 echo common-device
-sed -i 'i|Device Tree|USESCOMMONTREE=0|' tmp/codename-clone_sources_template.txt
+sed -i '2 i\USESCOMMONTREE=0' tmp/codename-clone_sources_template.txt
 elif [[ $STARTCHOICE = "1" ]]
 then
 #
 echo unified-vendor
-sed -i 'i|Device Tree|UVTP=0|' tmp/codename-clone_sources_template.txt
+sed -i '3 i\UVTP=0' tmp/codename-clone_sources_template.txt
 elif [[ $STARTCHOICE = "" ]] 
 then
 #
