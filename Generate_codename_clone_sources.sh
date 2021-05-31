@@ -48,11 +48,11 @@ export DEVTREEURL=`sed -n 1p /tmp/out.tmp`
 export VENDTREEURL=`sed -n 2p /tmp/out.tmp`
 export KERNELSRCURL=`sed -n 3p /tmp/out.tmp`
 export DEVICECODENAME=`sed -n 4p /tmp/out.tmp`
-export DEVICEMFG=`sed -n 4p /tmp/out.tmp`
-export DEVICESOC=`sed -n 4p /tmp/out.tmp`
-export DEVICECOMMONTREE=`sed -n 4p /tmp/out.tmp`
-export DEVICECOMMONPATH=`sed -n 4p /tmp/out.tmp`
-export VENDORTREEPATH=`sed -n 4p /tmp/out.tmp`
+export DEVICEMFG=`sed -n 5p /tmp/out.tmp`
+export DEVICESOC=`sed -n 6p /tmp/out.tmp`
+export DEVICECOMMONTREE=`sed -n 7p /tmp/out.tmp`
+export DEVICECOMMONPATH=`sed -n 8p /tmp/out.tmp`
+export VENDORTREEPATH=`sed -n 9p /tmp/out.tmp`
 # remove temporary file created
 rm -f /tmp/out.tmp
 #Write to output file the result
