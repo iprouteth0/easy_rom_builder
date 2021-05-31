@@ -33,16 +33,16 @@ fi
 
 
 dialog --backtitle "Generate codename-clone_sources.sh" --title "Device trees - Form" \
---form "\nFill in you device details.  Leave fields 7,8,9 blank if you device does not usep" 25 107 18 \
-"Device tree url:" 1 1 "" 1 40 60 30  \
-"Vendor tree url:" 2 1 "" 2 40 60 30  \
-"Kernel source url:" 3 1 "" 3 40 60 30  \
-"Device codename:" 4 1 "" 4 40 60 30  \
-"Device manufacturer:" 5 1 "" 5 40 60 30  \
-"Device SoC (for kernel path):" 6 1 "" 6 40 60 30  \
-"Device common tree (if used):" 7 1 "" 7 40 60 30  \
-"Device common tree path:" 8 1 "" 8 40 60 30  \
-"Vendor tree path (for unified vendor):" 9 1 "" 9 40 60 30 > /tmp/out.tmp 2>&1 >/dev/tty
+--form "\nFill in you device details.  Leave fields 7,8,9 blank if you device does not used" 25 107 18 \
+"Device tree url:" 1 1 "" 1 40 60 200  \
+"Vendor tree url:" 2 1 "" 2 40 60 200  \
+"Kernel source url:" 3 1 "" 3 40 60 200  \
+"Device codename:" 4 1 "" 4 40 60 200  \
+"Device manufacturer:" 5 1 "" 5 40 60 200  \
+"Device SoC (for kernel path):" 6 1 "" 6 40 60 200  \
+"Device common tree (if used):" 7 1 "" 7 40 60 200  \
+"Device common tree path:" 8 1 "" 8 40 60 200  \
+"Vendor tree path (for unified vendor):" 9 1 "" 9 40 60 200 > /tmp/out.tmp 2>&1 >/dev/tty
 # Start retrieving each line from temp file 1 by one with sed and declare variables as inputs
 export DEVTREEURL=`sed -n 1p /tmp/out.tmp`
 export VENDTREEURL=`sed -n 2p /tmp/out.tmp`
