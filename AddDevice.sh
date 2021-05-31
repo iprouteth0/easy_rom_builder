@@ -1,9 +1,9 @@
 #!/bin/bash
 dialog --backtitle "Add device to device menu" --title "Add device - Form" \
---form "\nAdd device to device menu" 15 80 7 \
-"Codename:" 1 1 "" 1 25 40 30  \
-"Menu number:" 2 1 "" 2 25 40 30  \
-"Tree directory:" 3 1 "" 3 25 40 30 > /tmp/out.tmp \
+--form "\nAdd device to device menu" 15 90 7 \
+"Codename:" 1 1 "" 1 25 70 120  \
+"Menu number:" 2 1 "" 2 25 70 120  \
+"Tree directory:" 3 1 "" 3 25 70 120 > /tmp/out.tmp \
 2>&1 >/dev/tty
 # Start retrieving each line from temp file 1 by one with sed and declare variables as inputs
 export CODENAME=`sed -n 1p /tmp/out.tmp`
