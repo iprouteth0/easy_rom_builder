@@ -7,11 +7,11 @@ git clone https://github.com/iprouteth0/device_xiaomi_olivewood device/xiaomi/ol
 ## Vendor Tree
 git clone https://github.com/iprouteth0/vendor_xiaomi_olives vendor/xiaomi/olives
 
-git clone https://github.com/Stargazer19/hardware_qcom_display-caf-msm8937 hardware/qcom-caf/msm8937/display
-git clone https://github.com/Stargazer19/hardware_qcom_media-caf-msm8937 hardware/qcom-caf/msm8937/media
-git clone https://github.com/Stargazer19/hardware_qcom_audio-caf-msm8937 hardware/qcom-caf/msm8937/audio 
-cp hardware/qcom-caf/msm8996/Android.* hardware/qcom-caf/msm8937/
-cat $THIDIR/device_mk_changes-msm8937.txt >> device/xiaomi/olivewood/device.mk
+#git clone https://github.com/Stargazer19/hardware_qcom_display-caf-msm8937 hardware/qcom-caf/msm8937/display
+#git clone https://github.com/Stargazer19/hardware_qcom_media-caf-msm8937 hardware/qcom-caf/msm8937/media
+#git clone https://github.com/Stargazer19/hardware_qcom_audio-caf-msm8937 hardware/qcom-caf/msm8937/audio 
+#cp hardware/qcom-caf/msm8996/Android.* hardware/qcom-caf/msm8937/
+#cat $THIDIR/device_mk_changes-msm8937.txt >> device/xiaomi/olivewood/device.mk
 
 
 echo "TARGET_KERNEL_CLANG_COMPILE=true" >> device/xiaomi/olivewood/BoardConfig.mk
