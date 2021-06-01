@@ -5,7 +5,7 @@ git clone DEVTREEURL device/DEVICEMFG/DEVICECODENAME
 if [[ $USESCOMMONTREE = 0 ]]
 then
 git clone DEVICECOMMONTREE DEVICECOMMONPATH
-elif [[ $USESCOMMONTREE = 1 ]]
+elif [[ ! $USESCOMMONTREE = 0 ]]
 then
 echo "common trees not enabled"
 fi
