@@ -245,7 +245,7 @@ rom20() {
 }
 
 
-rom22() {
+rom21() {
   ## Conquer OS
         export ROMGIT=https://github.com/ConquerAOSP/manifest
         export ROMNAME=conquer
@@ -256,7 +256,7 @@ rom22() {
 }
 
 
-rom23() {
+rom22() {
   ## Corvus
         export ROMGIT=https://github.com/Corvus-ROM/android_manifest
         export ROMNAME=corvus
@@ -267,7 +267,7 @@ rom23() {
 }
 
 
-rom24() {
+rom23() {
   ## crdroid
         export ROMGIT=https://github.com/crdroidandroid/android
         export ROMNAME=lineage
@@ -278,7 +278,7 @@ rom24() {
 }
 
 
-rom25() {
+rom24() {
   ## Cygnus
         export ROMGIT=https://github.com/cygnus-rom/manifest
         export ROMNAME=cygnus
@@ -289,7 +289,7 @@ rom25() {
 }
 
 
-rom26() {
+rom25() {
   ##  Descendant
         export ROMGIT=https://github.com/Descendant-XI/manifests
         export ROMNAME=descendant
@@ -300,7 +300,7 @@ rom26() {
 }
 
 
-rom27() {
+rom26() {
   ## Dirty Unicorns
         export ROMGIT=https://github.com/DirtyUnicorns/android_manifest
         export ROMNAME=du
@@ -311,7 +311,7 @@ rom27() {
 }
 
 
-rom28() {
+rom27() {
   ##  DotOS 
         export ROMGIT=https://github.com/DotOS/manifest
         export ROMNAME=dot
@@ -322,7 +322,7 @@ rom28() {
 }
 
 
-rom29() {
+rom28() {
   ## evox
         export ROMGIT=https://github.com/Evolution-X/manifest
         export ROMNAME=evolution
