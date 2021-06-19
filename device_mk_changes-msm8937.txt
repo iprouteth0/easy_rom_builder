@@ -18,11 +18,4 @@ SRC_MEDIA_HAL_DIR := hardware/qcom-caf/$(YOUR_HW_PLATFORM)/media
 PRODUCT_SOONG_NAMESPACES += \
 $(LOCAL_PATH) \
 hardware/qcom-caf/$(YOUR_HW_PLATFORM) \
-hardware/qcom \
-vendor/qcom/opensource \
-vendor/xiaomi/msm8937-common \
-vendor/xiaomi/olivewood \
-vendor/codeaurora/telephony \
-vendor/addon/misc \
-vendor/addon/themes \
-vendor/xiaomi/sdm439-common
+hardware/qcom 
