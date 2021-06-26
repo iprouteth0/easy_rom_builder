@@ -47,6 +47,13 @@ olivelite() {
   . Build_script.sh 
 }
 
+cafebabe() {
+  # xiaomi olives cafebabe trees
+  export DEVICEDIR="device/xiaomi/olives"
+  export DEVICENAME=olives
+  export SOURCESCRIPT=cafebabe
+  . Build_script.sh 
+}
 
 beyond0qlte() {
   # samsung beyond0qlte Build menu
@@ -113,11 +120,12 @@ OPTIONS=(
 1 "Moto E 2020 (ginna)"                                             
 2 "Xiaomi 8A Dual (olivewood)"
 3 "Xiaomi 8A (olivelite)"
-4 "beyond0qlte"
-5 "beyond1qlte"
-6 "beyond2qlte"
-7 "d1q"
-8 "d2q"
+4 "Xiaomi Olives cafebabe trees"
+5 "beyond0qlte"
+6 "beyond1qlte"
+7 "beyond2qlte"
+8 "d1q"
+9 "d2q"
 #section2
 98 "generate device sources script"
 99 "Add device to menu"
@@ -165,8 +173,19 @@ case $CHOICE in
   clear
 ;;
 
-#############################################################
+###############################################################
+
 4 )
+  # Xiaomi Olivelite build menu
+  clear
+  BEGIN=$(date +%s)
+  cafebabe
+  END=$(date +%s)
+  clear
+;;
+
+#############################################################
+5 )
   # samsung beyond0qlte build menu
   clear
   BEGIN=$(date +%s)
@@ -175,7 +194,7 @@ case $CHOICE in
   clear
 ;;
 #############################################################
-5 )
+6 )
   # samsung beyond1qlte build menu
   clear
   BEGIN=$(date +%s)
@@ -184,7 +203,7 @@ case $CHOICE in
   clear
 ;;
 #############################################################
-6 )
+7 )
   # samsung beyond2qlte build menu
   clear
   BEGIN=$(date +%s)
@@ -193,7 +212,7 @@ case $CHOICE in
   clear
 ;;
 #############################################################
-7 )
+8 )
   # samsung d1q build menu
   clear
   BEGIN=$(date +%s)
@@ -202,7 +221,7 @@ case $CHOICE in
   clear
 ;;
 #############################################################
-8 )
+9 )
   # samsung d2q build menu
   clear
   BEGIN=$(date +%s)
