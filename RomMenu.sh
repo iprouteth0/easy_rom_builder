@@ -504,7 +504,7 @@ rom44() {
         export ROMNAME=mallu
 	export ROMDIR=$ROMNAME
         export ROMBUILD=bacon
-	export VENDOR_CONFIG=$ROMNAME ; . DeviceMenu.sh
+	export VENDOR_CONFIG=lineage ; . DeviceMenu.sh
   read
 }
 
