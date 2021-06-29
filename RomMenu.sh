@@ -448,7 +448,7 @@ rom39() {
         export ROMGIT=https://github.com/AOSPK/manifest
         export ROMNAME=aosp
 	export ROMDIR=kraken
-        export ROMBUILD=""
+        export ROMBUILD="bacon"
 	export VENDOR_CONFIG=$ROMNAME ; . DeviceMenu.sh
   read
 }
@@ -654,7 +654,7 @@ rom57() {
 
 rom58() {
   ##  reloaded
-        export ROMGIT=https://github.com/ReloadedOS/android_manifest/tree/r
+        export ROMGIT="https://github.com/ReloadedOS/android_manifest -b r"
         export ROMNAME=reloaded
 	export ROMDIR=$ROMNAME
         export ROMBUILD=reloaded
