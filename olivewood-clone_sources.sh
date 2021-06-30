@@ -11,7 +11,8 @@ git clone https://github.com/DerpFest-Devices/vendor_xiaomi_olivewood vendor/xia
 
 ## kernel sources
 #git clone https://github.com/Xiaomi-SDM439-Development/android_kernel_xiaomi_sdm439 -b a11/clean-iwlan kernel/xiaomi/sdm439
-git clone https://github.com/mi-msm8937/android_kernel_xiaomi_sdm439 -b a11/clean-iwlankernel/xiaomi/sdm439
+#git clone https://github.com/mi-msm8937/android_kernel_xiaomi_sdm439 -b a11/clean-iwlan kernel/xiaomi/sdm439
+git clone https://github.com/DerpFest-Devices/kernel_xiaomi_olivewood kernel/xiaomi/sdm439
 
 ## match device tree files to rom tree
 cp device/xiaomi/olivewood/derp_olivewood.mk device/xiaomi/olivewood/$ROMNAME\_olivewood.mk
