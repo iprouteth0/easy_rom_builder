@@ -877,7 +877,7 @@ rom77() {
 rom999() {
   ## octavi is
         ./AddRom.sh
-  readp ow
+  read
 }
 
 romQ() {
