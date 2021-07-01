@@ -866,7 +866,7 @@ rom77() {
         export ROMNAME=exthmui
         export ROMDIR=$ROMNAME
         export ROMBUILD=bacon
-        export VENDOR_CONFIG=exthmui ; . DeviceMenu.sh
+        export VENDOR_CONFIG=exthm ; . DeviceMenu.sh
   read
 }
 
