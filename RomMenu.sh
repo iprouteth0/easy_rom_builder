@@ -859,12 +859,25 @@ rom76() {
   read
 }
 
+
+rom77() {
+  ## exthmui
+        export ROMDIR="https://github.com/exthmui/android"
+        export ROMNAME=exthmui
+        export ROMDIR=$ROMNAME
+        export ROMBUILD=bacon
+        export VENDOR_CONFIG=exthmui ; . DeviceMenu.sh
+  read
+}
+
+
+
 ##section1
 
 rom999() {
   ## octavi is
         ./AddRom.sh
-  read
+  readp ow
 }
 
 romQ() {
@@ -962,6 +975,7 @@ OPTIONS=(
 74 "yaap"
 75 "zenx"
 76 "octavi"
+77 "exthmui"
 #section2
 998 "Setup build environment"
 999 "Add ROM to list"
@@ -1959,6 +1973,17 @@ case $CHOICE in
   clear
   BEGIN=$(date +%s)
   rom76
+  END=$(date +%s)
+  echo "${green}Android 10 Roms Uploaded!!${reset}"
+  echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
+;;
+#############################################################
+
+77 )
+  # #
+  clear
+  BEGIN=$(date +%s)
+  rom77
   END=$(date +%s)
   echo "${green}Android 10 Roms Uploaded!!${reset}"
   echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
