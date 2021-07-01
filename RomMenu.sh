@@ -851,7 +851,7 @@ rom75() {
 
 rom76() {
   ## octavi is
-        export ROMDIR="https://github.com/Octavi-OS/platform_manifest"
+        export ROMGIT="https://github.com/Octavi-OS/platform_manifest"
         export ROMNAME=octavi
         export ROMDIR=$ROMNAME
         export ROMBUILD=bacon
@@ -862,7 +862,7 @@ rom76() {
 
 rom77() {
   ## exthmui
-        export ROMDIR="https://github.com/exthmui/android"
+        export ROMGIT="https://github.com/exthmui/android"
         export ROMNAME=exthmui
         export ROMDIR=$ROMNAME
         export ROMBUILD=bacon
