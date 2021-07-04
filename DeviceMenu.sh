@@ -95,6 +95,15 @@ d2q() {
   . Build_script.sh 
 }
 
+nio() {
+  # Motorola edge s codename nio
+  export DEVICEDIR="device/motorola/nio"
+  export DEVICENAME=nio
+  export SOURCESCRIPT=nio
+  . Build_script.sh 
+}
+
+
 #section1
 
 generatescript() {
@@ -126,6 +135,7 @@ OPTIONS=(
 7 "beyond2qlte"
 8 "d1q"
 9 "d2q"
+10 "Motorola Edge S (codename nio)"
 #section2
 98 "generate device sources script"
 99 "Add device to menu"
@@ -230,7 +240,16 @@ case $CHOICE in
   clear
 ;;
 #############################################################
-## section4
+10 )
+  # Motorola edge s codename nio
+  clear
+  BEGIN=$(date +%s)
+  nio
+  END=$(date +%s)
+  clear
+;;
+#############################################################
+# section4
 #############################################################
 98 )
   # generate device sources script
