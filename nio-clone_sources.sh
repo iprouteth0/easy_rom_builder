@@ -1,7 +1,7 @@
 #! /bin/bash
 
 
-git clone https://github.com/moto-sm8250/android_device_motorola_nio device/moto
+git clone https://github.com/moto-sm8250/android_device_motorola_nio device/motorola/nio
 
 git clone https://github.com/moto-sm8250/android_device_motorola_sm8250-common device/motorola/sm8250-common
 
