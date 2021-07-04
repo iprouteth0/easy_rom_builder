@@ -7,6 +7,8 @@ git clone https://github.com/moto-sm8250/android_device_motorola_sm8250-common d
 
 git clone https://github.com/moto-sm8250/android_vendor_motorola_nio vendor/motorola/nio
 
+git clone https://github.com/moto-sm8250/android_vendor_motorola_sm8250-common vendor/motorola/sm8250-common
+
 git clone https://github.com/moto-sm8250/android_kernel_motorola_sm8250 kernel/motorola/sm8250
 
 
