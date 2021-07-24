@@ -4,7 +4,7 @@
 git clone https://github.com/whatthef84/android_device_motorola_sofiar-1 device/motorola/sofiar
 
 ## Vendor Tree
-git clone https://github.com/whatthef84/android_vendor_motorola_sofiar-1 -b androod-11 vendor/motorola/sofiar
+git clone https://github.com/whatthef84/android_vendor_motorola_sofiar-1 -b android-11 vendor/motorola/sofiar
 
 
 ## Kernel Sources:  
@@ -15,7 +15,7 @@ git clone https://github.com/b4ckup007/OdinKernel_Upstream kernel/motorola/trink
 cp device/motorola/sofiar/havoc_sofiar.mk device/motorola/sofiar/$ROMNAME\_sofiar.mk
 sed -i "s|vendor/havoc/config|vendor/$VENDOR_CONFIG/config|" device/motorola/sofiar/$ROMNAME\_sofiar.mk
 sed -i "s|havoc|$ROMNAME|" device/motorola/sofiar/$ROMNAME\_sofiar.mk
-sed -i "s|havic|$ROMNAME|" device/motorola/sofiar/AndroidProducts.mk
+sed -i "s|havoc|$ROMNAME|" device/motorola/sofiar/AndroidProducts.mk
 #echo "WITH_GAPPS := true" >> device/motorola/sofiar/$ROMNAME\_sofiar.mk
 
 
