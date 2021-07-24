@@ -4,7 +4,7 @@
 git clone https://github.com/whatthef84/android_device_motorola_sofiar-1 device/motorola/sofiar
 
 ## Vendor Tree
-git clone https://github.com/whatthef84/android_vendor_motorola_sofiar-1 -b android-11 vendor/motorola/sofiar
+git clone https://github.com/whatthef84/android_vendor_motorola_sofiar-1 -b android-10 vendor/motorola/sofiar
 
 
 ## Kernel Sources:  
