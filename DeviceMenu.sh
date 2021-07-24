@@ -103,6 +103,14 @@ nio() {
   . Build_script.sh 
 }
 
+sofiar() {
+  # Motorola G8 power codename sofiaR
+  export DEVICEDIR="device/motorola/sofiar"
+  export DEVICENAME=sofiar
+  export SOURCESCRIPT=sofiar
+  . Build_script.sh 
+}
+
 
 #section1
 
@@ -136,6 +144,7 @@ OPTIONS=(
 8 "d1q"
 9 "d2q"
 10 "Motorola Edge S (codename nio)"
+11 "Motorola G8 power"
 #section2
 98 "generate device sources script"
 99 "Add device to menu"
@@ -248,7 +257,16 @@ case $CHOICE in
   END=$(date +%s)
   clear
 ;;
-#############################################################
+##############################################################
+11 )
+  # Motorola G8 power codename sofiaR
+  clear
+  BEGIN=$(date +%s)
+  sofiar
+  END=$(date +%s)
+  clear
+;;
+##########################################################
 # section4
 #############################################################
 98 )
