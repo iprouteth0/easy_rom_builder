@@ -874,7 +874,7 @@ rom78() {
    ## Derpfest 11
         export ROMGIT="https://github.com/DerpFest-11/manifest"
         export ROMNAME=derp
-        export ROMGIT=$ROMNAME
+        export ROMDIR=$ROMNAME
         export ROMBUILD=$ROMNAME
         export VENDOR_CONFIG=$ROMNAME ; . DevicMenu.sh
   read
