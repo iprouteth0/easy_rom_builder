@@ -876,7 +876,7 @@ rom78() {
         export ROMNAME=derp
         export ROMDIR=$ROMNAME
         export ROMBUILD=$ROMNAME
-        export VENDOR_CONFIG=$ROMNAME ; . DevicMenu.sh
+        export VENDOR_CONFIG=$ROMNAME ; . DeviceMenu.sh
   read
 }
 
