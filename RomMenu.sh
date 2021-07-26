@@ -870,6 +870,15 @@ rom77() {
   read
 }
 
+rom78() {
+   ## Derpfest 11
+        export ROMGIT="https://github.com/DerpFest-11/manifest"
+        export ROMNAME=derp
+        export ROMGIT=$ROMNAME
+        export ROMBUILD=$ROMNAME
+        export VENDOR_CONFIG=$ROMNAME ; . Device menu.sh
+  read
+}
 
 
 ##section1
@@ -976,6 +985,7 @@ OPTIONS=(
 75 "zenx"
 76 "octavi"
 77 "exthmui"
+78 "Derpfest 11"
 #section2
 998 "Setup build environment"
 999 "Add ROM to list"
@@ -1988,6 +1998,18 @@ case $CHOICE in
   echo "${green}Android 10 Roms Uploaded!!${reset}"
   echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
 ;;
+############################################################
+
+78 )
+  # #
+  clear
+  BEGIN=$(date +%s)
+  rom78
+  END=$(date +%s)
+  echo "${green}Android 10 Roms Uploaded!!${reset}"
+  echo "${green}Total time elapsed: $(echo $((${END}-${BEGIN})) | awk '{print int($1/60)"mins "int($1%60)"secs "}')${reset}"
+;;
+####################################################
 #############################################################
 ##section4
 ##########################################################################################################################
