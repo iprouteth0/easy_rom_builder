@@ -4,7 +4,7 @@
 git clone https://github.com/whatthef84/android_device_motorola_sofiar-1 device/motorola/sofiar
 
 ## Vendor Tree
-git clone https://github.com/whatthef84/android_vendor_motorola_sofiar-1 -b android-10 vendor/motorola/sofiar
+git clone https://github.com/whatthef84/android_vendor_motorola_sofiar-1 -b android-11 vendor/motorola/sofiar
 
 
 ## Kernel Sources:  
@@ -18,6 +18,12 @@ sed -i "s|havoc|$ROMNAME|" device/motorola/sofiar/$ROMNAME\_sofiar.mk
 sed -i "s|havoc|$ROMNAME|" device/motorola/sofiar/AndroidProducts.mk
 #echo "WITH_GAPPS := true" >> device/motorola/sofiar/$ROMNAME\_sofiar.mk
 
+IMotHealth=$(grep IMotHealth device/$VENDOR_CONFIG/sepolicy/common/dynamic/hwservice_contexts -c)
+if [[ $IMotHealth == 1 ]]
+then
+cp device/$VENDOR_CONFIG/sepolicy/common/dynamic/hwservice_contexts device/$VENDOR_CONFIG/sepolicy/common/dynamic/backup_hwservice_contexts
+sed -i '/IMotHealth/d' device/$VENDOR_CONFIG/sepolicy/common/dynamic/hwservice_contexts
+fi
 
 if [[ -d "vendor/$VENDOR_CONFIG/config" ]]
 then
