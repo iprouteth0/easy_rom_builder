@@ -22,7 +22,8 @@ sed -i "s|lineage_|$ROMNAME\_|" device/motorola/ginna/AndroidProducts.mk
 cp device/motorola/ginna/lineage.dependencies device/motorola/ginna/$ROMNAME.dependencies
 cp device/motorola/ginna/lineage_ginna.mk device/motorola/ginna/$ROMNAME\_ginna.mk
 rm -rf vendor/qcom/opensource/power
-git clone https://github.com/ArrowOS/android_vendor_qcom_opensource_power vendor/qcom/opensource/powercat ~/scripts-backup/device_mk_changes.txt >> device/motorola/ginna/device.mk
+git clone https://github.com/ArrowOS/android_vendor_qcom_opensource_power vendor/qcom/opensource/power
+cat ~/scripts-backup/device_mk_changes.txt >> device/motorola/ginna/device.mk
 cat $THISDIR/device_mk_changes.txt >> device/motorola/ginna/device.mk
 
 
