@@ -17,7 +17,7 @@ sed -i "s|vendor/lineage/config|vendor/$VENDOR_CONFIG/config|" device/motorola/o
 sed -i "s|lineage_odessa|$ROMNAME\_odessa|" device/motorola/odessa/lineage_odessa.mk
 sed -i "s|lineage_|$ROMNAME\_|" device/motorola/odessa/AndroidProducts.mk
 cp device/motorola/odessa/lineage.dependencies device/motorola/odessa/$ROMNAME.dependencies
-cp device/motorola/odessa/lineage_ginna.mk device/motorola/odessa/$ROMNAME\_odessa.mk
+cp device/motorola/odessa/lineage_odessa.mk device/motorola/odessa/$ROMNAME\_odessa.mk
 
 
 
