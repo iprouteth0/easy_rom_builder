@@ -111,7 +111,13 @@ sofiar() {
   . Build_script.sh 
 }
 
-
+odessa() {
+  # Motorola G9 Plus codename odessa
+  export DEVICEDIR="device/motorola/odessa"
+  export DEVICENAME=odessa
+  export SOURCESCRIPT=odessa
+  . Build_script.sh 
+}
 #section1
 
 generatescript() {
@@ -144,7 +150,8 @@ OPTIONS=(
 8 "d1q"
 9 "d2q"
 10 "Motorola Edge S (codename nio)"
-11 "Motorola G8 power"
+11 "Motorola G8 power (codename social)"
+12 "Motorola G9 power (codename Odessa)
 #section2
 98 "generate device sources script"
 99 "Add device to menu"
@@ -263,6 +270,16 @@ case $CHOICE in
   clear
   BEGIN=$(date +%s)
   sofiar
+  END=$(date +%s)
+  clear
+;;
+##########################################################
+##############################################################
+12 )
+  # Motorola G9 power codename odessa
+  clear
+  BEGIN=$(date +%s)
+  odessa
   END=$(date +%s)
   clear
 ;;
