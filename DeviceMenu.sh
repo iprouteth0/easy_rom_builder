@@ -151,7 +151,7 @@ OPTIONS=(
 9 "d2q"
 10 "Motorola Edge S (codename nio)"
 11 "Motorola G8 power (codename social)"
-12 "Motorola G9 power (codename Odessa)
+12 "Motorola G9 power (codename Odessa)"
 #section2
 98 "generate device sources script"
 99 "Add device to menu"
