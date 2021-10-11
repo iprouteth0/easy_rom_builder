@@ -9,7 +9,7 @@ git clone https://github.com/iprouteth0/vendor_motorola_odessa vendor/motorola/o
 
 git clone https://github.com/iprouteth0/vendor_motorola_sm6150-common vendor/motorola/sm6150-common
 
-git clone https://github.com/iprouteth0/kernel_motorola_hanoip kernel/motorola/
+git clone https://github.com/iprouteth0/kernel_motorola_hanoip kernel/motorola/sm6150
 
 
 
