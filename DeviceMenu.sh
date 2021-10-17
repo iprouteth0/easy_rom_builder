@@ -118,6 +118,14 @@ odessa() {
   export SOURCESCRIPT=odessa
   . Build_script.sh 
 }
+
+kiev() {
+  # Motorola One 5G Ace codename kiev
+  export DEVICEDIR="device/motorola/kiev"
+  export DEVICENAME=kiev
+  export SOURCESCRIPT=kiev
+  . Build_script.sh 
+}
 #section1
 
 generatescript() {
@@ -152,6 +160,7 @@ OPTIONS=(
 10 "Motorola Edge S (codename nio)"
 11 "Motorola G8 power (codename social)"
 12 "Motorola G9 power (codename Odessa)"
+13 "Motorola One 5G Ace (codename kiev)"
 #section2
 98 "generate device sources script"
 99 "Add device to menu"
@@ -280,6 +289,15 @@ case $CHOICE in
   clear
   BEGIN=$(date +%s)
   odessa
+  END=$(date +%s)
+  clear
+;;
+##############################################################
+13 )
+  # Motorola One 5G Ace codename kiev
+  clear
+  BEGIN=$(date +%s)
+  kiev
   END=$(date +%s)
   clear
 ;;
