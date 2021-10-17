@@ -5,12 +5,12 @@ git clone https://github.com/iprouteth0/android_device_motorola_kiev device/moto
 
 git clone https://github.com/iprouteth0/android_device_motorola_sm7250-common device/motorola/sm7250-common
 
-git clone https://github.com/iprouteth0/vendor_motorola_kiev vendor/motorola/kiev
+git clone https://github.com/iprouteth0/android_vendor_motorola_kiev vendor/motorola/kiev
 
-git clone https://github.com/iprouteth0/vendor_motorola_sm7250-common vendor/motorola/sm7250-common
+git clone https://github.com/iprouteth0/android_vendor_motorola_sm7250-common vendor/motorola/sm7250-common
 
 git clone https://github.com/iprouteth0/android_kernel_motorola_sm7250 kernel/motorola/sm7250
-#git clone https://github.com/iprouteth0/kernel_motorola_sm7250 kernel/motorola/sm7250
+#git clone https://github.com/iprouteth0/android_kernel_motorola_sm7250 kernel/motorola/sm7250
 
 
 
