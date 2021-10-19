@@ -315,7 +315,7 @@ rom27() {
   ##  DotOS 
         export ROMGIT=https://github.com/DotOS/manifest
         export ROMNAME=dot
-	export ROMDIR=$ROMNAME
+	export ROMDIR=dot
         export ROMBUILD=bacon
 	export VENDOR_CONFIG=$ROMNAME ; . DeviceMenu.sh
   read
