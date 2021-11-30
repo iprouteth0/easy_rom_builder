@@ -9,7 +9,7 @@ git clone https://github.com/iprouteth0/android_vendor_motorola_kiev vendor/moto
 
 git clone https://github.com/iprouteth0/android_vendor_motorola_sm7250-common vendor/motorola/sm7250-common
 
-git clone https://github.com/iprouteth0/android_kernel_motorola_sm7250 kernel/motorola/sm7250
+git clone https://github.com/SyberHexen/android_kernel_motorola_sm7250 kernel/motorola/sm7250
 #git clone https://github.com/iprouteth0/android_kernel_motorola_sm7250 kernel/motorola/sm7250
 
 
